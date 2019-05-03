@@ -21,7 +21,7 @@
         <script defer src="fontawesome-free-5.8.1-web/js/solid.js"> </script>
         <script defer src="fontawesome-free-5.8.1-web/css/all.css"> </script>
 
-    <title>Crud Cliente</title>
+    <title>Formulario</title>
 </head>
 
 
@@ -104,18 +104,14 @@
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Page</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
-                            </li>
+                                <li class="nav-item active">
+                                        <a class="nav-link" href="#">Olá, usuario!</a>
+                                    </li>
+                                    <li class="nav-item">
+                                         
+                                        <button type="button" class="btn btn-light">Sair</button>
+                                        <i class="fas fa-sign-out-alt"></i>
+                                    </li>
                         </ul>
                     </div>
                 </div>
@@ -125,11 +121,11 @@
                     <form>
                         <div class="form-row">
             
-                            <div class="form-group col-md-2">
+                            <div class="form-group col-md-2 col-2">
                                 <label for="inputEmail4">ID</label>
                                 <input type="text" class="form-control" id="inputEmail4" placeholder="">
                             </div>
-                            <div class="form-group col-md-2">
+                            <div class="form-group col-md-2 col-2">
                                 <label for="inputPassword4">Setor</label>
                                 <input type="text" class="form-control" id="inputPassword4" placeholder="">
                             </div>
@@ -137,11 +133,11 @@
             
                         <div class="form-row">
             
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-6 col-6">
                                 <label for="inputEmail4">Nome</label>
                                 <input type="text" class="form-control" id="inputEmail4" placeholder="">
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-6 col-6">
                                 <label for="inputPassword4">Sobrenome</label>
                                 <input type="text" class="form-control" id="inputPassword4" placeholder="">
                             </div>
@@ -159,11 +155,11 @@
             
                         </div>
                         <div class="form-row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-6 col-6">
                                 <label for="inputCity">Cidade</label>
                                 <input type="text" class="form-control" id="inputCity">
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-4 col-6">
                                 <label for="inputState">Estado</label>
                                 <select id="inputState" class="form-control">
                                     <option selected>Choose...</option>
@@ -182,15 +178,16 @@
                                 <label for="inputCity">Rua</label>
                                 <input type="text" class="form-control" id="inputCity">
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-2 col-2">
+                                <label for="inputZip">Número</label>
+                                <input type="text" class="form-control" id="inputZip">
+                            </div>
+                            <div class="form-group col-md-4 col-10">
                                 <label for="inputState">Bairro</label>
                                 <input type="text" class="form-control" id="inputPassword4" placeholder="">
                                 </select>
                             </div>
-                            <div class="form-group col-md-2">
-                                <label for="inputZip">Numero</label>
-                                <input type="text" class="form-control" id="inputZip">
-                            </div>
+                            
                         </div>
             
                         <div class="form-row">
@@ -202,14 +199,7 @@
             
                         </div>
             
-                        <div class="form-group">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck">
-                                <label class="form-check-label" for="gridCheck">
-                                    Check me out
-                                </label>
-                            </div>
-                        </div>
+                       
                         <button type="submit" class="btn btn-primary">Confirmar</button>
                     </form>
             
