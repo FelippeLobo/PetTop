@@ -9,155 +9,214 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="sidebarStyle.css">
 
-    <style>
-        .navbar{
-            display:flex;
-            
-            
-        }
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
 
-        .container{
+    <script defer src="fontawesome-free-5.8.1-web/js/solid.js"> </script>
+    <script defer src="fontawesome-free-5.8.1-web/css/all.css"> </script>
 
-        }
-    </style>
     <title>Crud Cliente</title>
 </head>
 
 
 <body>
-    
-    <div >
-            <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-                    <!-- Brand -->
-                  
-                    <!-- Toggler/collapsibe Button -->
-                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"  aria-expanded="false" aria-controls="collapseExample">
-                      <span class="navbar-toggler-icon"></span>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>PET TOP</h3>
+                <a href="#">
+                    <i class="fas fa-bone"></i>
+
+                </a>
+
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#">Home 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Home 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Home 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-briefcase"></i>
+                        About
+                    </a>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-copy"></i>
+                        Pages
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
+                        </li>
+                    </ul>
+                </li>
+               
+             
+            </ul>
+
+
+        </nav>
+
+
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-light">
+                        <i class="fas fa-align-justify"></i>
+                        <span></span>
                     </button>
-                  
-                    <!-- Navbar links -->
-                    <div class="collapse" id="collapseExample">
-                      <ul class="nav flex-column">
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">Link</a>
-                        </li> 
-                      </ul>
-                    </div> 
-                  </nav>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
 
-    </div>
-<!--
-    <p>
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
-            aria-expanded="false" aria-controls="collapseExample">
-           oi
-        </button>
-    </p>
-    <div class="collapse" id="collapseExample">
-            <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Active</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-    </div>
--->
-    
-  
-    <div class="container">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
 
-        
-        <div class="page-header">
-            <h1>Clientes</h1>
-            <th></th>
-            <td></td>
-            <button type="button" class="btn btn-primary"><img src="package/build/svg/plus-small.svg" alt=""> Add New
-                Client</button>
+            <div class="container">
+
+                <h1>Clientes</h1>
+                <button type="button" class="btn btn-primary"><img src="package/build/svg/plus-small.svg" alt=""> Add
+                    New
+                    Client</button>
+
+
+                <table class="table table-striped table-hover table-condensed table-row">
+                    <thead>
+                        <tr class="row">
+                            <th class="col-sm-1">#</th>
+                            <th class="col-sm-3">Cliente</th>
+                            <th class="col-sm-5">Número</th>
+                            <th class="col-sm-3">Ações</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="row">
+                            <th class="col-sm-1">1</th>
+                            <td class="col-sm-3">Mark</td>
+                            <td class="col-sm-5">4154841954</td>
+                            <td class="col-sm-3">
+                                <a class="btn btn-success btn-sm" href="#">Visualizar</a>
+                                <a class="btn btn-warning btn-sm" href="#">Editar</a>
+                                <a class="btn btn-danger btn-sm" href="#">Excluir</a>
+                            </td>
+
+                        </tr>
+                        <tr class="row">
+                            <th class="col-sm-1">2</th>
+                            <td class="col-sm-3">Jacob</td>
+                            <td class="col-sm-5">5451849</td>
+                            <td class="col-sm-3">
+                                <a class="btn btn-success btn-sm" href="#">Visualizar</a>
+                                <a class="btn btn-warning btn-sm" href="#">Editar</a>
+                                <a class="btn btn-danger btn-sm" href="#">Excluir</a>
+                            </td>
+                        </tr>
+
+                        <tr class="row">
+                            <th class="col-sm-1">3</th>
+                            <td class="col-sm-3">Larry</td>
+                            <td class="col-sm-5">14414941946</td>
+                            <td class="col-sm-3"><a class="btn btn-success btn-sm" href="#">Visualizar</a>
+                                <a class="btn btn-warning btn-sm" href="#">Editar</a>
+                                <a class="btn btn-danger btn-sm" href="#">Excluir</a>
+                            </td>
+                        </tr>
+
+                        <tr class="row">
+                            <th class="col-sm-1">4</th>
+                            <td class="col-sm-3">Bob</td>
+                            <td class="col-sm-5">64649641946</td>
+                            <td class="col-sm-3"><a class="btn btn-success btn-sm" href="#">Visualizar</a>
+                                <a class="btn btn-warning btn-sm" href="#">Editar</a>
+                                <a class="btn btn-danger btn-sm" href="#">Excluir</a>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+            </div>
+
         </div>
-        <div class="row ">
-            <table class="table table-striped table-hover table-condensed">
-                <thead>
-                    <tr class="row">
-                        <th class="col-sm-1">#</th>
-                        <th class="col-sm-4">Cliente</th>
-                        <th class="col-sm-4">Número</th>
-                        <th class="col-sm-3">Ações</th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="row">
-                        <th class="col-sm-1">1</th>
-                        <td class="col-sm-4">Mark</td>
-                        <td class="col-sm-4">4154841954</td>
-                        <td class="col-sm-3">
-                            <a class="btn btn-success btn-sm" href="#">Visualizar</a>
-                            <a class="btn btn-warning btn-sm" href="#">Editar</a>
-                            <a class="btn btn-danger btn-sm" href="#">Excluir</a>
-                        </td>
 
-                    </tr>
-                    <tr class="row">
-                        <th class="col-sm-1">2</th>
-                        <td class="col-sm-4">Jacob</td>
-                        <td class="col-sm-4">5451849</td>
-                        <td class="col-sm-3">
-                            <a class="btn btn-success btn-sm" href="#">Visualizar</a>
-                            <a class="btn btn-warning btn-sm" href="#">Editar</a>
-                            <a class="btn btn-danger btn-sm" href="#">Excluir</a>
-                        </td>
-                    </tr>
-
-                    <tr class="row">
-                        <th class="col-sm-1">3</th>
-                        <td class="col-sm-4">Larry</td>
-                        <td class="col-sm-4">14414941946</td>
-                        <td class="col-sm-3"><a class="btn btn-success btn-sm" href="#">Visualizar</a>
-                            <a class="btn btn-warning btn-sm" href="#">Editar</a>
-                            <a class="btn btn-danger btn-sm" href="#">Excluir</a>
-                        </td>
-                    </tr>
-
-                    <tr class="row">
-                        <th class="col-sm-1">4</th>
-                        <td class="col-sm-4">Bob</td>
-                        <td class="col-sm-4">64649641946</td>
-                        <td class="col-sm-3"><a class="btn btn-success btn-sm" href="#">Visualizar</a>
-                            <a class="btn btn-warning btn-sm" href="#">Editar</a>
-                            <a class="btn btn-danger btn-sm" href="#">Excluir</a>
-                    </tr>
-
-                </tbody>
-            </table>
-        </div>
     </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <div class="card-footer ">
+            
+          
+        </div>
+
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
         crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
 </body>
 
 </html>
