@@ -114,13 +114,17 @@ span {
 }
 
 #sidebar .sidebar-header {
+    display: flex;
     padding: 20px;
     background: rgb(208, 104, 0);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    justify-content: center;
 }
 
 #sidebar .sidebar-header strong {
     display: none;
     font-size: 1.8em;
+  
 }
 
 #sidebar ul.components {
