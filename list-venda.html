@@ -8,10 +8,10 @@
     <title>Lista venda</title>
   </head>
   <body>
-    <div class="container lista rounded border border-dark">
+    <div class="container cont-lista rounded border border-dark">
       <h1>Vendas</h1>
-      <span class="buttonadd"><button type="button" class="btn btn-primary">+ Adicionar uma venda</button></span>
-      <table class="table table-striped listain">
+      <button type="button" class="btn btn-primary">+ Adicionar uma venda</button>
+      <table class="table table-striped lista-in">
           <thead>
             <tr>
               <th scope="col">Produto</th>
@@ -27,7 +27,7 @@
               <td>01/09/2006</td>
               <td ><button type="button" class="btn btn-success">Visualizar</button>
                 <button type="button" class="btn btn-warning">Editar</button>
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Excluir</button></td>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Excluir</button></td>
             </tr>
             <tr>
               <td>Ração</td>
@@ -35,7 +35,7 @@
               <td>18/48/2920</td>
               <td class="action"><button type="button" class="btn btn-success">Visualizar</button>
                 <button type="button" class="btn btn-warning">Editar</button>
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Excluir</button></td>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Excluir</button></td>
             </tr>
             <tr>
               <td>Larry</td>
@@ -43,24 +43,41 @@
               <td>15/98/6206</td>
               <td class="action"><button type="button" class="btn btn-success">Visualizar</button>
                 <button type="button" class="btn btn-warning">Editar</button>
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Excluir</button></td>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Excluir</button></td>
             </tr>
           </tbody>
         </table>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <h5 class="modal-title" id="exampleModalCenterTitle"></h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            ...
+            Deseja excluir essa venda?
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
