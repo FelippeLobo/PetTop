@@ -28,97 +28,17 @@
 
 
 <body>
-    <div class="wrapper">
-        <!-- Sidebar  -->
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3>PET TOP</h3>
-                <a href="#">
-                    <i class="fas fa-bone"></i>
-
-                </a>
-
-            </div>
-
-            <ul class="list-unstyled components">
-                    <li>
-                            <a href="#">
-                                <i class="fas fa-home"></i>
-                                <div class="icon-legend"> Home</div>
-                            </a>
-                            
-                        </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-briefcase"></i>
-                        About
-                    </a>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <i class="fas fa-copy"></i>
-                        Pages
-                    </a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="#">Page 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 3</a>
-                        </li>
-                    </ul>
-                </li>
-
-
-            </ul>
-
-
-        </nav>
-
-
-
-        <!-- Page Content  -->
-        <div id="content">
-
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-
-                    <button type="button" id="sidebarCollapse" class="btn btn-light">
-                        <i class="fas fa-align-justify"></i>
-                        <span></span>
-                    </button>
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-align-justify"></i>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="nav navbar-nav ml-auto">
-                                <li class="nav-item active">
-                                        <a class="nav-link" href="#">Olá, usuario!</a>
-                                    </li>
-                                    <li class="nav-item">
-                                         
-                                        <button type="button" class="btn btn-light">Sair</button>
-                                        <i class="fas fa-sign-out-alt"></i>
-                                    </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-
+    
             <div class="container">
                 <h1 class="page-header">Editar cliente</h1>
                     <form>
                         <div class="form-row">
             
-                            <div class="form-group col-md-2 col-2">
+                            <div class="form-group col-md-1 col-3">
                                 <label for="inputEmail4">ID</label>
                                 <input type="text" class="form-control" id="inputEmail4" placeholder="">
                             </div>
-                            <div class="form-group col-md-2 col-2">
+                            <div class="form-group col-md-1 col-3">
                                 <label for="inputPassword4">Setor</label>
                                 <input type="text" class="form-control" id="inputPassword4" placeholder="">
                             </div>
@@ -126,11 +46,11 @@
             
                         <div class="form-row">
             
-                            <div class="form-group col-md-3 col-6">
+                            <div class="form-group col-md-6 col-6">
                                 <label for="inputEmail4">Nome</label>
                                 <input type="text" class="form-control" id="inputEmail4" placeholder="">
                             </div>
-                            <div class="form-group col-md-3 col-6">
+                            <div class="form-group col-md-6 col-6">
                                 <label for="inputPassword4">Sobrenome</label>
                                 <input type="text" class="form-control" id="inputPassword4" placeholder="">
                             </div>
@@ -139,18 +59,20 @@
                             <div class="form-group col-md-6">
                                 <label for="inputAddress2">E-mail</label>
                                 <input type="email" class="form-control" id="inputAddress2" placeholder="">
-                            </div>            
-                        </div>
-
-                        <div class="form-row">                           
+                            </div> 
+                            
                             <div class="form-group col-md-6">
                                 <label for="inputAddress">CPF</label>
                                 <input type="text" class="form-control" id="inputAddress" placeholder="">
                             </div>
-            
                         </div>
 
                         <div class="form-row">
+                                <div class="form-group col-md-6">
+                                        <label for="inputCity">Rua</label>
+                                        <input type="text" class="form-control" id="inputCity">
+                                    </div>
+
                             <div class="form-group col-md-4 col-6">
                                 <label for="inputCity">Cidade</label>
                                 <input type="text" class="form-control" id="inputCity">
@@ -188,27 +110,24 @@
                                 </select>
                             </div>
                            
+                            
+
                         </div>
             
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="inputCity">Rua</label>
-                                <input type="text" class="form-control" id="inputCity">
-                            </div>
-                           
-                        </div>
+                        
                         
                         <div class="form-row">
-                            
-                            <div class="form-group col-md-2 col-2">
+                            <div class="form-group col-md-4 col-8">
+                                <label for="inputState">Bairro</label>
+                                <input type="text" class="form-control" id="inputPassword4" placeholder="">
+                                
+                            </div>
+
+                            <div class="form-group col-md-2 col-4">
                                 <label for="inputZip">Número</label>
                                 <input type="text" class="form-control" id="inputZip">
                             </div>
-                            <div class="form-group col-md-4 col-10">
-                                <label for="inputState">Bairro</label>
-                                <input type="text" class="form-control" id="inputPassword4" placeholder="">
-                                </select>
-                            </div>
+                           
                             
                         </div>
 
@@ -225,14 +144,14 @@
                         <button type="submit" class="btn btn-primary">Confirmar</button>
                     </form>
             
-                </div>
+             </div>
             
 
-            </div>
+            
 
-        </div>
+       
 
-    </div>
+    
 
   
  <!-- jQuery CDN - Slim version (=without AJAX) -->
