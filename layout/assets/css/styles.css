@@ -64,8 +64,9 @@ span {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #FF8000;
-    color: black;
+    background:#37414c;
+    box-shadow: 0px 0px 7px #848484;
+    color: rgb(255, 102, 0);
     transition: all 0.3s;
 }
 
@@ -116,17 +117,25 @@ span {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: rgb(208, 104, 0);
+    background: #37414c;
+    color: rgb(255, 102, 0);
+}
+
+.sidebarheader{
+    
+    color: rgb(255, 102, 0);
+    
 }
 
 #sidebar .sidebar-header strong {
     display: none;
     font-size: 1.8em;
+    
 }
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #FF8000;
+    border-bottom: none;
 }
 
 #sidebar ul li a {
@@ -225,5 +234,7 @@ a.article:hover {
         min-width: 220px;
         max-width: 220px;
     }
+
+    
 }
 
