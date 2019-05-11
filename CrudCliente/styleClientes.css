@@ -22,3 +22,7 @@
     border-top: 1px solid gray;
     
 }
+
+textarea {
+    resize: none;
+ }
