@@ -78,4 +78,9 @@ span {
     margin: 8%;
 }
 
+.form-group textarea
+{
+    resize: none;
+}
+
 
