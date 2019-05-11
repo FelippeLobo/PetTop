@@ -59,6 +59,19 @@ span {
 {
     width: 30%;
 }
+.title
+{
+    margin-top: 40px; 
+}
+.title a
+{
+    max-height: 38px;
+}
+
+.title h1
+{
+    max-height: 40px;
+}
 
 .centralizar-add-edit
 {

@@ -15,20 +15,22 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
     <!-- Font Awesome JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
 </head>
 
 <body>
         <!-- Page Content  -->
                 <div class="container">
-                    <h1>Produtos</h1>
-                    <a class="btn btn-primary col-md-3" href="adicionarProduto.html"> Adicionar Novo Produto </a>
+                    <div class="row title">
+                        <h1 class="col">Produtos</h1>
+                        <a class="btn btn-primary col-sm-3" href="adicionarProduto.html"><i class="fas fa-plus"></i> Adicionar Novo Produto </a>
+                    </div>
                     <table class="table table-striped">
                         <thead>
                           <tr>
-                            <th scope="col">#</th>
+                            <th scope="col">ID</th>
                             <th scope="col">Produto</th>
-                            <th scope="col">Categoria</th>
+                            <th scope="col">Preço</th>
                             <th class="actions" scope="col">Ações</th>
                           </tr>
                         </thead>
@@ -36,7 +38,7 @@
                           <tr>
                             <th scope="row">1</th>
                             <td>Produto 1</td>
-                            <td>Categoria 1</td>
+                            <td>R$ 0,00</td>
                             <td>
                                 <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
                                 data-target="#productModal">
@@ -70,7 +72,7 @@
                                         <div class="modal-dialog" role="document">
                                           <div class="modal-content">
                                             <div class="modal-header">
-                                              <h5 class="modal-title">Excluir Produto 3?</h5>
+                                              <h5 class="modal-title">Excluir Produto?</h5>
                                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                               </button>
@@ -91,7 +93,7 @@
                           <tr>
                             <th scope="row">2</th>
                             <td>Produto 2</td>
-                            <td>Categoria 2</td>
+                            <td>R$ 0,00</td>
                             <td>
                                 <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
                                 data-target="#productModal2">
@@ -146,7 +148,7 @@
                           <tr>
                             <th scope="row">3</th>
                             <td>Produto 3</td>
-                            <td>Categoria 3</td>
+                            <td>R$ 0,00</td>
                             <td>
                                     <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
                                     data-target="#productModal3">
