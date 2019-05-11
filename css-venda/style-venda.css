@@ -15,6 +15,9 @@
 .action{
     width: 25%;
     height: 20%;
-    
+}
 
+.buttonadd{
+    display: flex;
+    justify-content: space-between;
 }

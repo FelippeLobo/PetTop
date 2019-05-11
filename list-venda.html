@@ -8,12 +8,15 @@
     <title>Lista venda</title>
   </head>
   <body>
-    <div class="container cont-lista rounded border border-dark">
-      <h1>Vendas</h1>
-      <button type="button" class="btn btn-primary">+ Adicionar uma venda</button>
+    <div class="container cont-lista">
+      <div class="form-row buttonadd">
+        <h1>Vendas</h1>
+        <a href="add-venda.html"><button type="button" class="btn btn-primary">+ Adicionar uma venda</button></a>
+      </div>
       <table class="table table-striped lista-in">
           <thead>
             <tr>
+              <th scope="col">ID</th>
               <th scope="col">Produto</th>
               <th scope="col">Cliente</th>
               <th scope="col">Data</th>
@@ -22,27 +25,30 @@
           </thead>
           <tbody>
             <tr>
+              <td>XX</td>
               <td>Coleira</td>
               <td>Maria</td>
               <td>01/09/2006</td>
               <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalScrollable">Visualizar</button>
-                <button type="button" class="btn btn-warning">Editar</button>
+                <a href="edit-venda.html"><button type="button" class="btn btn-warning">Editar</button></a>
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Excluir</button></td>
             </tr>
             <tr>
+              <td>XX</td>
               <td>Ração</td>
               <td>GAbsfd</td>
               <td>18/48/2920</td>
               <td class="action"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalScrollable">Visualizar</button>
-                <button type="button" class="btn btn-warning">Editar</button>
+                <a href="edit-venda.html"><button type="button" class="btn btn-warning">Editar</button></a>
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Excluir</button></td>
             </tr>
             <tr>
+              <td>XX</td>
               <td>Larry</td>
               <td>the Bird</td>
               <td>15/98/6206</td>
               <td class="action"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalScrollable">Visualizar</button>
-                <button type="button" class="btn btn-warning">Editar</button>
+                <a href="edit-venda.html"><button type="button" class="btn btn-warning">Editar</button></a>
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Excluir</button></td>
             </tr>
           </tbody>
@@ -92,17 +98,21 @@
       <div class="modal-dialog modal-dialog-scrollable" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5>
+            <h5 class="modal-title" id="exampleModalScrollableTitle">Cliente XX</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            ...
+            <h4>Cliente:</h4>
+            <h4>Produto:</h4>
+            <h4>Desconto:</h4>
+            <h4>Quantidade:</h4>
+            <h4>Data:</h4>
+            <h4>Observações:</h4>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
           </div>
         </div>
       </div>
