@@ -1,0 +1,9 @@
+.card-teste{
+    background-color: #dadada;
+}
+
+.img-card {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
