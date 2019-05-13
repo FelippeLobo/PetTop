@@ -31,61 +31,45 @@
                     </select>
                 </div>
             </div>
+
             <div class="form-row">
                 <div class="form-group col-md-6 col-6">
                     <label for="inputName">Nome</label>
                     <input type="text" class="form-control" id="inputName" placeholder="Escreva seu nome...">
                 </div>
             </div>
+
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputEmail">E-mail</label>
                     <input type="email" class="form-control" id="inputEmail" placeholder="Escreva seu e-mail...">
                 </div>
             </div>
+
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputEmail">Confirme o e-mail</label>
                     <input type="email" class="form-control" id="inputEmail" placeholder="Confirme seu e-mail...">
                 </div>
             </div>
+
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputPassword">Senha</label>
                     <input type="password" class="form-control" id="inputPassword" placeholder="Escolha sua senha...">
                 </div>
             </div>
-            <div>
-                <button type="button" id="modal-btn" class="btn btn-info" data-toggle="modal" data-target="#myModal">
-                    Selecionar Imagem
-                </button>
-                <div id='div_img_name'></div>
 
-                <!-- Modal -->
-                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h2>Galeria de Imagens</h2>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                        aria-hidden="true">&times;</span>
-                                </button>
-                                <h4 class="modal-title" id="myModalLabel"></h4>
-                            </div>
-                            <div class="modal-body">
-                                <!-- {% for image in images %} -->
-                                <input class="img" type="image" src="{{ image.url }}" height="100" width="130"
-                                    style="padding-right: 3px;padding-bottom: 3px;">
-                                <!-- {% endfor %} -->
-                            </div>
-                        </div>
-                    </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="file" class="custom-file-input" id="inputGroupFile01"
+                        aria-describedby="inputGroupFileAddon01">
+                    <label class="custom-file-label" for="inputGroupFile01">Selecionar imagem...</label>
                 </div>
             </div>
-            <br>
+
             <button type="submit" class="btn btn-primary">Confirmar</button>
-                <a class="btn btn-secondary" href="crudUser.html" role="button">Cancelar</a>
-            <br>
+            <a class="btn btn-secondary" href="crudUser.html" role="button">Cancelar</a>
     </div>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
