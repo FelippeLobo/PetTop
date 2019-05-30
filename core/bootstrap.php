@@ -6,5 +6,5 @@ require 'core/bancoDeDados/construtorDeQuerys.php';
 require 'core/roteador.php';
 require 'core/requisicao.php';
 
-return new ConstrutorDeQuerys(Conexao::conectar($config['bancoDeDados']));
+return new ConstrutorDeQuerys(BancoDeDados::conectar($config['bancoDeDados']));
 ?>
