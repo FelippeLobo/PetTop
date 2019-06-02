@@ -30,7 +30,7 @@
                 <div class="container">
                     <div class="row header">
                         <h1 class="col">Categorias</h1>
-                        <a class="btn btn-primary col-sm-3" href="adicionarCategoria.html"><i class="fas fa-plus"></i> Adicionar Nova Categoria </a>
+                        <a class="btn btn-primary col-sm-3" href="criarCategoria"><i class="fas fa-plus"></i> Adicionar Nova Categoria </a>
                     </div>
                     <table class="table table-striped">
                         <thead>
