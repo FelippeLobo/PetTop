@@ -41,21 +41,22 @@
                           </tr>
                         </thead>
                         <tbody>
+                        <?php foreach($categorias as $categoria) : ?>
                           <tr>
-                            <th scope="row">1</th>
-                            <td>Categoria 1</td>
+                            <th scope="row"><?=$categoria->id?></th>
+                            <td><?=$categoria->nome?></td>
                             <td>
                                 <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
-                                data-target="#productModal">
+                                data-target="#categoryModal<?=$categoria->id?>">
                                     Visualizar
                                 </button>
 
                                 <!-- Modal -->
-                                <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                                <div class="modal fade" id="categoryModal<?=$categoria->id?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLongTitle">Categoria 1</h5>
+                                                    <h5 class="modal-title" id="exampleModalLongTitle"><?=$categoria->nome?></h5>
                                                 </div>
                                                 <div class="modal-body">
                                                     (Lista com todos os produtos que a categoria abrange)
@@ -95,6 +96,7 @@
 
                             </td>
                           </tr>
+                        <?php endforeach;?>
                         </tbody>
                       </table>
                       <nav aria-label="Page navigation example">
