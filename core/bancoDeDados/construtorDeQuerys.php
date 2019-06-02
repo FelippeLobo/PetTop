@@ -38,5 +38,18 @@ class ConstrutorDeQuerys
         $elemento = $this->pdo->prepare("delete from {$tabela} where id = {$paramentro}");
         $elemento->execute();
     }
+
+    public function editar($tabela,$paramentros,$id)
+    {
+        $keys = array_keys($paramentros);
+        $setAux = [];
+        foreach($keys as $key)
+        {
+            $setAux[] = "{$key}=:{$key}";
+        }  
+        $sql = sprintf('update %s set %s where id = %s',$tabela,implode(', ',$setAux),$id);
+        $elemento = $this->pdo->prepare($sql);
+        $elemento->execute($paramentros);
+    } 
 }
 ?>
