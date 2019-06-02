@@ -14,12 +14,12 @@
   <body>
     <div class="container centralizar-add-edit">
             <h1>Editar Categoria</h1>
-            <form>    
+            <form action ="editarCategoria" method = "post">    
                     
                   <div class="form-row">
                     <div class="form-group col-6">
                         <label for="exampleFormControlInput1">Nome</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome da Categoria">
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome da Categoria" value = "<?=$categoria[0]->nome?>">
                     </div>
                   </div>
                 <button type="submit" class="btn btn-primary">Confirmar</button>
