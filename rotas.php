@@ -5,4 +5,5 @@ $roteador->get('PetTop/apagarCategoria','models/crudCategoria/apagarCategoria.ph
 $roteador->get('PetTop/editarCategoria','controllers/crudCategoria/editCategoria.php');
 $roteador->post('PetTop/editarCategoria/editando','models/crudCategoria/editarCategoria.php');
 $roteador->get('PetTop/criarCategoria','controllers/crudCategoria/addCategoria.php');
+$roteador->post('PetTop/criarCategoria/adicionando','models/crudCategoria/adicionarCategoria.php');
 ?>
