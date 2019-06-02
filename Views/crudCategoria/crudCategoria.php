@@ -74,11 +74,11 @@
 
                                 <a class="btn btn-warning btn-sm" href="editarCategoria?id=<?=$categoria->id?>" role="button">Editar</a>
                                 <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
-                                data-target="#modalForExclusions">
+                                data-target="#modalForExclusions<?=$categoria->id?>">
                                     Excluir
                                 </button>
 
-                                <div class="modal fade" id="modalForExclusions" tabindex="-1" role="dialog">
+                                <div class="modal fade" id="modalForExclusions<?=$categoria->id?>" tabindex="-1" role="dialog">
                                         <div class="modal-dialog" role="document">
                                           <div class="modal-content">
                                             <div class="modal-header">
