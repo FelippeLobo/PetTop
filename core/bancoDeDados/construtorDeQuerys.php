@@ -27,11 +27,10 @@ class ConstrutorDeQuerys
             $e->getMessage();
         }    
     }
-    public function selecionarPorHeranca($tabela,$heranca,$paramentro)
+    public function selecionarOnde($tabela,$paramentros)
     {
-        $sql = sprintf('select * from %s where %s = %s',$tabela,$heranca,':'.$heranca);
-        $elementos = $this->pdo->prepare($sql);
-        $elementos->execute(array($heranca => $paramentro));
+        $elementos = $this->pdo->prepare("select * from {$tabela} where {$paramentros}");
+        $elementos->execute();
         return $elementos->fetchAll(PDO::FETCH_CLASS);
     }
     public function apagar($tabela,$paramentro)
