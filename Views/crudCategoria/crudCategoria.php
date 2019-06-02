@@ -59,7 +59,11 @@
                                                     <h5 class="modal-title" id="exampleModalLongTitle"><?=$categoria->nome?></h5>
                                                 </div>
                                                 <div class="modal-body">
-                                                    (Lista com todos os produtos que a categoria abrange)
+                                                    <ul>
+                                                      <?php foreach($produtos["categoria {$categoria->id}"] as $produto): ?>
+                                                        <li><?=$produto->nome?></li>
+                                                      <?php endforeach; ?>    
+                                                    </ul>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>

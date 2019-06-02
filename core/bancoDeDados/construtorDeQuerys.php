@@ -27,5 +27,12 @@ class ConstrutorDeQuerys
             $e->getMessage();
         }    
     }
+    public function selecionarPorHeranca($tabela,$heranca,$paramentro)
+    {
+        $sql = sprintf('select * from %s where %s = %s',$tabela,$heranca,':'.$heranca);
+        $elementos = $this->pdo->prepare($sql);
+        $elementos->execute(array($heranca => $paramentro));
+        return $elementos->fetchAll(PDO::FETCH_CLASS);
+    }
 }
 ?>
