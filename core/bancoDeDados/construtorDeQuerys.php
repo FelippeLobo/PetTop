@@ -34,5 +34,10 @@ class ConstrutorDeQuerys
         $elementos->execute(array($heranca => $paramentro));
         return $elementos->fetchAll(PDO::FETCH_CLASS);
     }
+    public function apagar($tabela,$paramentro)
+    {
+        $elemento = $this->pdo->prepare("delete from {$tabela} where id = {$paramentro}");
+        $elemento->execute();
+    }
 }
 ?>
