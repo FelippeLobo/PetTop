@@ -72,7 +72,7 @@
                                         </div>
                                     </div>
 
-                                <a class="btn btn-warning btn-sm" href="editarCategoria.html" role="button">Editar</a>
+                                <a class="btn btn-warning btn-sm" href="editarCategoria?id=<?=$categoria->id?>" role="button">Editar</a>
                                 <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
                                 data-target="#modalForExclusions">
                                     Excluir
