@@ -1,5 +1,18 @@
 <?php
-$categorias = $bancoDeDados->selecionarTudo('categoria');
+$registroPorPg = "4";
+if(isset($_GET['pag']))
+{
+    $pagAtual = $_GET['pag'];
+}
+else
+{
+    $pagAtual = "1";
+}
+$catInicial = $pagAtual - 1;
+$catInicial = $catInicial*$registroPorPg;
+$numCategorias = $bancoDeDados->contarRegistros('categoria');
+$totalPag = ceil($numCategorias/$registroPorPg);
+$categorias = $bancoDeDados->selecionarComLimite('categoria',[$catInicial,$registroPorPg]);
 $produtos = [];
 foreach($categorias as $categoria)
 {

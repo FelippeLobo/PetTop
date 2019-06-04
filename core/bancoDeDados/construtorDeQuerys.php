@@ -50,6 +50,21 @@ class ConstrutorDeQuerys
         $sql = sprintf('update %s set %s where id = %s',$tabela,implode(', ',$setAux),$id);
         $elemento = $this->pdo->prepare($sql);
         $elemento->execute($paramentros);
-    } 
+    }
+    
+    public function contarRegistros($tabela)
+    {
+        $elemento = $this->pdo->prepare("select count(*) from {$tabela}");
+        $elemento->execute();
+        return $elemento->fetchColumn();
+    }
+
+    public function selecionarComLimite($tabela,$paramentros)
+    {
+        $sql = sprintf('select * from %s limit %s',$tabela,implode(', ',$paramentros));
+        $elementos = $this->pdo->prepare($sql);
+        $elementos->execute();
+        return $elementos->fetchAll(PDO::FETCH_CLASS);
+    }
 }
 ?>
