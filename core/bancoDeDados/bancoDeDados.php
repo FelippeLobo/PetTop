@@ -1,7 +1,7 @@
 <?php
 class BancoDeDados
 {
-    public function conectar($config)
+    public static function conectar($config)
     {
         try
         {
