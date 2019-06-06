@@ -26,7 +26,8 @@
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Observações"></textarea>
               </div>
               <div class="form-group">
-                  <button type="button" class="btn btn-primary">Salvar alterações</button>
+              <button type="submit" class="btn btn-primary">Confirmar</button>
+              <a class="btn btn-danger" href="#" role="button">Cancelar</a>
               </div>
             </form>
         </div>

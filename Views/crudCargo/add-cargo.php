@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="css-cargo/style-cargo.css">
-    <title>Adicionar cargo</title>
+    <title>Criar cargo</title>
   </head>
   <body>
         <div class="container formulario">
@@ -26,7 +26,8 @@
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Observações"></textarea>
               </div>
               <div class="form-group">
-                  <button type="button" class="btn btn-primary">Confirmar</button>
+              <button type="submit" class="btn btn-primary">Confirmar</button>
+              <a class="btn btn-danger" href="#" role="button">Cancelar</a>
               </div>
             </form>
         </div>
