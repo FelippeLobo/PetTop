@@ -21,16 +21,14 @@
       <table class="table table-striped lista-in">
           <thead>
             <tr>
-              <th sco="col">ID</th>
-              <th scope="col">Nome</th>
+              <th scope="col">ID</th>
               <th scope="col">Cargo</th>
-              <th scope="col" class="action"></th>
+              <th class="action" scope="col">Ações</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-                <td>xx</td>
-                <td>Marcos</td>
+                <td scope="row">xx</td>
                 <td>Gerente</td>
                 <td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModalScrollable">Visualizar</button>
                 <a href="edit-cargo.html"><button type="button" class="btn btn-warning btn-sm" href="">Editar</button></a>
