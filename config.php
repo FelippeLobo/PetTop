@@ -1,7 +1,7 @@
 <?php
 return[
     'bancoDeDados'=>[
-        'nome'=>'',
+        'nome'=>'pettop',
         'usuario'=>'root',
         'senha'=>'',
         'servidor'=>'mysql:host=127.0.0.1',
