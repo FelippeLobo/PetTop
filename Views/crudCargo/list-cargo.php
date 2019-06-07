@@ -74,7 +74,7 @@
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                          <button type="button" class="btn btn-danger">Confirmar</button>
+                          <a class="btn btn-danger" href="apagarCargo?id=<?=$cargo->id?>">Confirmar</a>
                         </div>
                       </div>
                     </div>
