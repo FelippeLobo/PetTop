@@ -29,16 +29,20 @@
 
 
 <body>
-    	
+
     <?php
-        if(isset($_SESSION['mensagem'])) :?>
-        <div class="alert alert-<?php echo $_SESSION['tipo_msg']?>">
-        <?php
-        echo $_SESSION['mensagem'];
-        unset($_SESSION['mensagem']);
-        ?>
+    session_start();
+    if (isset($_SESSION['mensagem'])) : ?>
+        <div class="alert alert-<?php echo $_SESSION['tipo_msg'] ?> alert-dismissible fade show" role="alert">
+            <?php
+            echo $_SESSION['mensagem'];
+            unset($_SESSION['mensagem']);
+            ?>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
-    <?php endif; ?>
+    <?php endif ?>
 
     <div class="container">
         <div class="row cabeçalho">
@@ -68,74 +72,74 @@
 
                 <?php
                 require_once 'core/bootstrap.php';
-                
+
                 $nomes = $app['bancoDeDados']->selecionaTabela('setor');
 
-                foreach ($nomes as $nome) :?>
-   
-                <tr class="row">
-                    <th class="col-sm-2 col-2 col-md-2"><?php echo $nome['id']?></th>
-                    <td class="col-sm-4 col-8 col-md-6"><?php echo $nome['nome']?></td>
-                    <td class="col-sm-6 col-8 col-md-4">
-                    
-                        <button type="button" name="showS" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalSetor<?php echo $nome['id'];?>">
-                            Visualizar
-                        </button>
-                    
-                       
-                        <!-- Modal -->
-                        <div class="modal fade" id="modalSetor<?php echo $nome['id'];?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-scrollable" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Dados do
-                                            Setor
-                                        </h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        Nome do Setor: <?php echo $nome['nome'];?>
+                foreach ($nomes as $nome) : ?>
 
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <tr class="row">
+                        <th class="col-sm-2 col-2 col-md-2"><?php echo $nome['id'] ?></th>
+                        <td class="col-sm-4 col-8 col-md-6"><?php echo $nome['nome'] ?></td>
+                        <td class="col-sm-6 col-8 col-md-4">
 
+                            <button type="button" name="showS" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalSetor<?php echo $nome['id']; ?>">
+                                Visualizar
+                            </button>
+
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="modalSetor<?php echo $nome['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalScrollableTitle">Dados do
+                                                Setor
+                                            </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Nome do Setor: <?php echo $nome['nome']; ?>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <a class="btn btn-warning btn-sm" href="editarSetor?edit=<?php echo $nome["id"];?>">Editar</a>
-                        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal<?php echo $nome['id'];?>">
-                            Excluir
-                        </button>
+                            <a class="btn btn-warning btn-sm" href="editarSetor?edit=<?php echo $nome["id"]; ?>">Editar</a>
+                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal<?php echo $nome['id']; ?>">
+                                Excluir
+                            </button>
 
-                        <!-- Modal -->
-                        
-                        <div class="modal fade" id="deleteModal<?php echo $nome['id'];?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Excluir Setor</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        Tem certeza que deseja excluir este setor?
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                        <a href="apagaSetor?delete=<?php echo $nome["id"];?>" class="btn btn-danger">Confirmar</a>
+                            <!-- Modal -->
+
+                            <div class="modal fade" id="deleteModal<?php echo $nome['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Excluir Setor</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Tem certeza que deseja excluir este setor?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                            <a href="apagaSetor?delete=<?php echo $nome["id"]; ?>" class="btn btn-danger">Confirmar</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </td>
-                
-                </tr>
-                <?php endforeach ;?>
+                        </td>
+
+                    </tr>
+                <?php endforeach; ?>
 
             </tbody>
         </table>

@@ -1,7 +1,7 @@
 <?php
 
 
-session_start();
+
 if(isset($_GET['edit']))
 {
     $id=$_GET['edit'];
