@@ -16,7 +16,7 @@
     <div class="container cont-lista">
       <div class="form-row buttonadd">
         <h1>Cargos</h1>
-        <a href="add-cargo.html"><button type="button" class="btn btn-primary"><i class="fas fa-plus"></i> Adicionar um cargo</button></a>
+        <a href="criarCargo"><button type="button" class="btn btn-primary"><i class="fas fa-plus"></i> Adicionar um cargo</button></a>
       </div>
       <table class="table table-striped lista-in">
           <thead>
