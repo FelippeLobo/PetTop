@@ -55,7 +55,7 @@
                     </div>
                   </div>
 
-                  <a href="edit-cargo.html"><button type="button" class="btn btn-warning btn-sm" href="">Editar</button></a>
+                  <a href="editarCargo?id=<?=$cargo->id?>"><button type="button" class="btn btn-warning btn-sm" href="">Editar</button></a>
 
                   <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exclusion<?=$cargo->id?>">Excluir</button>
                   

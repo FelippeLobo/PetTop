@@ -4,30 +4,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="css-cargo/style-cargo.css">
+    <link rel="stylesheet" href="Views/crudCargo/css-cargo/style-cargo.css">
     <title>Editar cargo</title>
   </head>
   <body>
         <div class="container formulario">
           <h2>Editar Cargo</h2>
-            <form>
+            <form action="editarCargo/editando?id=<?=$cargoId?>" method="post">
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label>Nome</label>
-                  <input type="text" class="form-control" placeholder="Nome">
-                </div>
-                <div class="form-group col-md-6">
-                  <label>Cargo</label>
-                  <input type="text" class="form-control" placeholder="Cargo">
+                  <input type="text" class="form-control" placeholder="Nome" name="nome" value="<?=$cargo[0]->nome?>">
                 </div>
               </div>
               <div class="form-group">
                 <label>Observações</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Observações"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Observações" disabled></textarea>
               </div>
               <div class="form-group">
               <button type="submit" class="btn btn-primary">Confirmar</button>
-              <a class="btn btn-danger" href="#" role="button">Cancelar</a>
+              <a class="btn btn-danger" href="Cargos" role="button">Cancelar</a>
               </div>
             </form>
         </div>
