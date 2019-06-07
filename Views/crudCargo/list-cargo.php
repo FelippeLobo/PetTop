@@ -27,71 +27,96 @@
             </tr>
           </thead>
           <tbody>
+            <?php foreach($cargos as $cargo): ?>
             <tr>
-                <td scope="row">xx</td>
-                <td>Gerente</td>
-                <td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModalScrollable">Visualizar</button>
-                <a href="edit-cargo.html"><button type="button" class="btn btn-warning btn-sm" href="">Editar</button></a>
-                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter">Excluir</button></td>
+                <td scope="row"><?=$cargo->id?></td>
+                <td><?=$cargo->nome?></td>
+                <td>
+                  <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#cargoModal<?=$cargo->id?>">Visualizar</button>
+
+                    <!-- Modal vizualizar -->
+                  <div class="modal fade" id="cargoModal<?=$cargo->id?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalScrollableTitle"><?=$cargo->nome?></h5>
+                        </div>
+                        <div class="modal-body">
+                          <ul>
+                            <?php foreach($usuarios["cargo {$cargo->id}"] as $usuario): ?>
+                              <li><?=$usuario->nome?></li>
+                            <?php endforeach; ?>  
+                          </ul>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <a href="edit-cargo.html"><button type="button" class="btn btn-warning btn-sm" href="">Editar</button></a>
+
+                  <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exclusion<?=$cargo->id?>">Excluir</button>
+                  
+                  <!-- Modal excluir -->
+                  <div class="modal fade" id="exclusion<?=$cargo->id?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalCenterTitle">Excluir Cargo?</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <p>Tem certeza que deseja excluir esse cargo?</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                          <button type="button" class="btn btn-danger">Confirmar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
             </tr>
+            <?php endforeach; ?>
           </tbody>
         </table>
         <nav aria-label="Page navigation example">
-          <ul class="pagination">
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-              </a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-              </a>
-            </li>
-          </ul>
+            <ul class="pagination">
+                <?php if($pagAtual == "1"):?>
+                  <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Previous">
+                          <span aria-hidden="true">&laquo;</span>
+                      </a>
+                  </li>
+                <?php else: ?>
+                  <li class="page-item">
+                      <a class="page-link" href="?pag=<?=$pagAtual-1?>" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                      </a>
+                  </li>
+                <?php endif; ?>
+                <?php for($i="1";$i<=$totalPag;$i++):?>
+                  <li class="page-item"><a class="page-link" href="?pag=<?=$i?>"><?=$i?></a></li>
+                <?php endfor; ?>
+                <?php if($pagAtual == $totalPag):?>
+                  <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                      </a>
+                  </li>
+                <?php else: ?>
+                  <li class="page-item">
+                      <a class="page-link" href="?pag=<?=$pagAtual+1?>" aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                      </a>
+                  </li>
+                <?php endif; ?>
+            </ul>
         </nav>
-    </div>
-
-    <!-- Modal excluir -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalCenterTitle">Excluir Cargo?</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p>Tem certeza que deseja excluir esse cargo?</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-danger">Confirmar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal vizualizar -->
-    <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalScrollableTitle">Cargo xx</h5>
-          </div>
-          <div class="modal-body">
-            <h4>Nome:</h4>
-            <h4>Cargo:</h4>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-          </div>
-        </div>
-      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
