@@ -39,7 +39,7 @@
                             <tr>
                               <th scope="row"><?=$produto->id?></th>
                               <td><?=$produto->nome?></td>
-                              <td>R$ <?=$produto->preco?></td>
+                              <td>R$ <?=number_format($produto->preco,2)?></td>
                               <td>
                                   <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
                                   data-target="#productModal<?=$produto->id?>">
@@ -55,7 +55,7 @@
                                                   </div>
                                                   <div class="modal-body">
                                                       <p><b>Categoria:</b> <?=$categoria["produto {$produto->id}"][0]->nome?></p>
-                                                      <p><b>Preço:</b> R$ <?=$produto->preco?></p>
+                                                      <p><b>Preço:</b> R$ <?=number_format($produto->preco,2)?></p>
                                                       <p><b>Descrição:</b><br><?=$produto->descricao?></p>
                                                   </div>
                                                   <div class="modal-footer">
@@ -65,7 +65,7 @@
                                           </div>
                                       </div>
 
-                                  <a class="btn btn-warning btn-sm" href="editarProduto.html" role="button">Editar</a>
+                                  <a class="btn btn-warning btn-sm" href="editarProduto?id=<?=$produto->id?>" role="button">Editar</a>
                                   <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
                                   data-target="#modalForExclusions<?=$produto->id?>">
                                       Excluir
