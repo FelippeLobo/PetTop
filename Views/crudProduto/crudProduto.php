@@ -8,9 +8,9 @@
     <title>Produtos</title>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Views/crudProduto/assets/bootstrap-4.3.1-dist/css/bootstrap.min.css">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="Views/crudProduto/assets/css/styles.css">
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
@@ -35,192 +35,98 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Produto 1</td>
-                            <td>R$ 0,00</td>
-                            <td>
-                                <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
-                                data-target="#productModal">
-                                    Visualizar
-                                </button>
+                          <?php foreach($produtos as $produto): ?>
+                            <tr>
+                              <th scope="row"><?=$produto->id?></th>
+                              <td><?=$produto->nome?></td>
+                              <td>R$ <?=$produto->preco?></td>
+                              <td>
+                                  <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
+                                  data-target="#productModal<?=$produto->id?>">
+                                      Visualizar
+                                  </button>
 
-                                <!-- Modal -->
-                                <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLongTitle">Produto 1</h5>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <p>Categoria: </p>
-                                                    <p>Preço: </p>
-                                                    <p>Descrição: </p>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                <a class="btn btn-warning btn-sm" href="editarProduto.html" role="button">Editar</a>
-                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
-                                data-target="#modalForExclusions">
-                                    Excluir
-                                </button>
-
-                                <div class="modal fade" id="modalForExclusions" tabindex="-1" role="dialog">
-                                        <div class="modal-dialog" role="document">
-                                          <div class="modal-content">
-                                            <div class="modal-header">
-                                              <h5 class="modal-title">Excluir Produto?</h5>
-                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                              </button>
-                                            </div>
-                                            <div class="modal-body">
-                                              <p>Tem certeza que deseja excluir esse produto?</p>
-                                            </div>
-                                            <div class="modal-footer">
-                                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                              <button type="button" class="btn btn-danger">Confirmar</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                </div>
-
-                            </td>
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Produto 2</td>
-                            <td>R$ 0,00</td>
-                            <td>
-                                <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
-                                data-target="#productModal2">
-                                    Visualizar
-                                </button>
-
-                                <!-- Modal -->
-                                <div class="modal fade" id="productModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLongTitle">Produto 2</h5>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <p>Categoria: </p>
-                                                    <p>Preço: </p>
-                                                    <p>Descrição: </p>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                <a class="btn btn-warning btn-sm" href="editarProduto.html" role="button">Editar</a>
-                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
-                                data-target="#modalForExclusions">
-                                    Excluir
-                                </button>
-
-                                <div class="modal fade" id="modalForExclusions" tabindex="-1" role="dialog">
-                                        <div class="modal-dialog" role="document">
-                                          <div class="modal-content">
-                                            <div class="modal-header">
-                                              <h5 class="modal-title">Excluir Produto 3?</h5>
-                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                              </button>
-                                            </div>
-                                            <div class="modal-body">
-                                              <p>Esse é um processo irreversível</p>
-                                            </div>
-                                            <div class="modal-footer">
-                                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
-                                              <button type="button" class="btn btn-danger">Sim</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                </div>
-
-                            </td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td>Produto 3</td>
-                            <td>R$ 0,00</td>
-                            <td>
-                                    <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
-                                    data-target="#productModal3">
-                                        Visualizar
-                                    </button>
-                                    
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="productModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLongTitle">Produto 3</h5>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <p>Categoria: </p>
-                                                    <p>Preço: </p>
-                                                    <p>Descrição: </p>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <a class="btn btn-warning btn-sm" href="editarProduto.html" role="button">Editar</a>
-                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
-                                    data-target="#modalForExclusions">
-                                        Excluir
-                                    </button>
-                                    <div class="modal fade" id="modalForExclusions" tabindex="-1" role="dialog">
-                                            <div class="modal-dialog" role="document">
+                                  <!-- Modal -->
+                                  <div class="modal fade" id="productModal<?=$produto->id?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                                          <div class="modal-dialog" role="document">
                                               <div class="modal-content">
-                                                <div class="modal-header">
-                                                  <h5 class="modal-title">Excluir Produto 3?</h5>
-                                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                  </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                  <p>Esse é um processo irreversível</p>
-                                                </div>
-                                                <div class="modal-footer">
-                                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
-                                                  <button type="button" class="btn btn-danger">Sim</button>
-                                                </div>
+                                                  <div class="modal-header">
+                                                      <h5 class="modal-title" id="exampleModalLongTitle"><?=$produto->nome?></h5>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                      <p><b>Categoria:</b> <?=$categoria["produto {$produto->id}"][0]->nome?></p>
+                                                      <p><b>Preço:</b> R$ <?=$produto->preco?></p>
+                                                      <p><b>Descrição:</b><br><?=$produto->descricao?></p>
+                                                  </div>
+                                                  <div class="modal-footer">
+                                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+
+                                  <a class="btn btn-warning btn-sm" href="editarProduto.html" role="button">Editar</a>
+                                  <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                                  data-target="#modalForExclusions<?=$produto->id?>">
+                                      Excluir
+                                  </button>
+
+                                  <div class="modal fade" id="modalForExclusions<?=$produto->id?>" tabindex="-1" role="dialog">
+                                          <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                              <div class="modal-header">
+                                                <h5 class="modal-title">Excluir Produto?</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                  <span aria-hidden="true">&times;</span>
+                                                </button>
+                                              </div>
+                                              <div class="modal-body">
+                                                <p>Tem certeza que deseja excluir esse produto?</p>
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                <button type="button" class="btn btn-danger">Confirmar</button>
                                               </div>
                                             </div>
-                                    </div>
-                            </td>
-                          </tr>
+                                          </div>
+                                  </div>
+
+                              </td>
+                            </tr>
+                          <?php endforeach; ?>
                         </tbody>
                       </table>
                       <nav aria-label="Page navigation example">
                         <ul class="pagination">
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Previous">
+                            <?php if($pagAtual == "1"):?>
+                              <li class="page-item">
+                                  <a class="page-link" href="#" aria-label="Previous">
+                                      <span aria-hidden="true">&laquo;</span>
+                                  </a>
+                              </li>
+                            <?php else: ?>
+                              <li class="page-item">
+                                  <a class="page-link" href="?pag=<?=$pagAtual-1?>" aria-label="Previous">
                                     <span aria-hidden="true">&laquo;</span>
-                                </a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
+                                  </a>
+                              </li>
+                            <?php endif; ?>
+                            <?php for($i="1";$i<=$totalPag;$i++):?>
+                              <li class="page-item"><a class="page-link" href="?pag=<?=$i?>"><?=$i?></a></li>
+                            <?php endfor; ?>
+                            <?php if($pagAtual == $totalPag):?>
+                              <li class="page-item">
+                                  <a class="page-link" href="#" aria-label="Next">
+                                      <span aria-hidden="true">&raquo;</span>
+                                  </a>
+                              </li>
+                            <?php else: ?>
+                              <li class="page-item">
+                                  <a class="page-link" href="?pag=<?=$pagAtual+1?>" aria-label="Next">
+                                      <span aria-hidden="true">&raquo;</span>
+                                  </a>
+                              </li>
+                            <?php endif; ?>
                         </ul>
                     </nav>
                 </div>
@@ -233,7 +139,7 @@
     <!-- Popper.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
-    <script src="assets/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+    <script src="Views/crudProduto/assets/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
