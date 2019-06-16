@@ -23,7 +23,7 @@
                 <div class="container">
                     <div class="row title">
                         <h1 class="col">Produtos</h1>
-                        <a class="btn btn-primary col-sm-3" href="adicionarProduto.html"><i class="fas fa-plus"></i> Adicionar Novo Produto </a>
+                        <a class="btn btn-primary col-sm-3" href="criarProduto"><i class="fas fa-plus"></i> Adicionar Novo Produto </a>
                     </div>
                     <table class="table table-striped">
                         <thead>
