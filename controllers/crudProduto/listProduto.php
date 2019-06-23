@@ -19,5 +19,5 @@ foreach($produtos as $produto)
     $categoria["produto {$produto->id}"] = $bancoDeDados->selecionarOnde('categoria',"id = {$produto->id_categoria}");
 }
 
-require 'Views/crudProduto/crudProduto.php'
+require 'layout/index.php'
 ?>

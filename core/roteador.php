@@ -3,7 +3,8 @@ class Roteador
 {
     protected $rotas = [
         'GET'=>[],
-        'POST'=>[]
+        'POST'=>[],
+        'VIEW'=>[]
     ];
 
     public static function carregar($arquivo)
@@ -21,6 +22,11 @@ class Roteador
     public function post($uri,$controller)
     {
         $this->rotas['POST'][$uri] = $controller;
+    }
+
+    public function view($uri,$controller)
+    {
+        $this->rotas['VIEW'][$uri] = $controller;
     }
 
     public function direcionar($uri,$tipoRequisicao)
