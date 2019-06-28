@@ -33,12 +33,34 @@ class Roteador
     {
         if(array_key_exists($uri,$this->rotas[$tipoRequisicao]))
         {
-            return $this->rotas[$tipoRequisicao][$uri];
+            //return $this->rotas[$tipoRequisicao][$uri];
+            $parametros = explode('@',$this->rotas[$tipoRequisicao][$uri]);
+            return $this->chamarAcao($parametros[0],$parametros[1]);
         }
         else
         {
-            throw new Excpetion("Rota {$uri} nao existe");
+            throw new Exception("Rota {$uri} nao existe");
         }
+    }
+
+    //Direcionar as views
+    public function direcionarView($uri)
+    {
+        if(array_key_exists($uri,$this->rotas['VIEW']))
+        {
+            return $this->rotas['VIEW'][$uri];
+        }
+        else
+        {
+            throw new Exception("Rota {$uri} nao existe");
+        }
+    }
+
+    protected function chamarAcao($controller,$acao)
+    {
+        require "controllers/{$controller}.php";
+        $instancia = new $controller;
+        return $instancia->$acao();
     }
 }
 ?>
