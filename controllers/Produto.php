@@ -23,7 +23,7 @@ class Produto
             $categoria["produto {$produto->id}"] = App::get('bancoDeDados')->selecionarOnde('categoria',"id = {$produto->id_categoria}");
         }
 
-        require 'layout/index.php';
+        require 'Views/layout/layout.php';
     }
 
     public function apagarProduto()
