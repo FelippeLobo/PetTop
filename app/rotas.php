@@ -11,4 +11,6 @@ $roteador->view('PetTop/Produtos','app/Views/crudProduto/crudProduto.php');
 //Venda
 $roteador->get('PetTop/Vendas','Venda@listaVenda');
 $roteador->get('PetTop/apagarVenda','Venda@apagarVenda');
+$roteador->get('PetTop/editarVenda','Venda@editarVendaView');
+$roteador->post('PetTop/editarVenda/editando','Venda@editarVenda')
 ?>

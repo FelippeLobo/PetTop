@@ -36,5 +36,31 @@ class Venda
         App::get('bancoDeDados')->apagar('vendas',$venda);
         header('Location: '.$_SERVER['HTTP_REFERER']);
     }
+
+    public function editarVendaView()
+    {
+        $vendaId = $_GET['id'];
+        $venda = App::get('bancoDeDados')->selecionarOnde('vendas',"id = {$vendaId}");
+        $produtos = App::get('bancoDeDados')->selecionarTudo('produtos');
+        $usuarios = App::get('bancoDeDados')->selecionarTudo('users');
+        $clientes = App::get('bancoDeDados')->selecionarTudo('cliente');
+        require 'app/Views/crudVenda/edit-venda.php';
+    }
+
+    public function editarVenda()
+    {
+        $vendaId = $_GET['id'];
+        $dados = [
+            'id_user'=>$_POST['id_user'],
+            'id_cliente'=>$_POST['id_cliente'],
+            'id_produto'=>$_POST['id_produto'],
+            'desconto'=>$_POST['desconto'],
+            'qtd_vendida'=>$_POST['qtd_vendida'],
+            'data_venda'=>$_POST['data_venda'],
+            'anotacoes'=>$_POST['anotacoes']
+        ];
+        App::get('bancoDeDados')->editar('vendas',$dados,$vendaId);
+        header('Location: /PetTop/Vendas');
+    }
 }
 ?>

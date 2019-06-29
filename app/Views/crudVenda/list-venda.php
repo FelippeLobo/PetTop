@@ -64,7 +64,7 @@
                     </div>
                   </div>
                   
-                  <a href="#"><button type="button" class="btn btn-warning btn-sm">Editar</button></a>
+                  <a href="editarVenda?id=<?=$venda->id?>"><button type="button" class="btn btn-warning btn-sm">Editar</button></a>
                   
                   <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalForExclusions<?=$venda->id?>">Excluir</button>
                 
