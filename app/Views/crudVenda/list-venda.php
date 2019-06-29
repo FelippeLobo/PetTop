@@ -4,14 +4,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="css-cargo/style-cargo.css">
-    <title>Lista cargo</title>
+    <link rel="stylesheet" href="app/Views/crudVenda/css-venda/style-venda.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+    <title>Vendas</title>
   </head>
   <body>
     <div class="container cont-lista">
       <div class="form-row buttonadd">
         <h1>Vendas</h1>
-        <a href="add-venda.html"><button type="button" class="btn btn-primary">+ Adicionar uma venda</button></a>
+        <a href="add-venda.html"><button type="button" class="btn btn-primary"><i class="fas fa-plus"></i> Adicionar uma venda</button></a>
       </div>
       <table class="table table-striped lista-in">
           <thead>
@@ -29,27 +34,9 @@
               <td>Coleira</td>
               <td>Maria</td>
               <td>01/09/2006</td>
-              <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalScrollable">Visualizar</button>
-                <a href="edit-venda.html"><button type="button" class="btn btn-warning">Editar</button></a>
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Excluir</button></td>
-            </tr>
-            <tr>
-              <td>XX</td>
-              <td>Ração</td>
-              <td>GAbsfd</td>
-              <td>18/48/2920</td>
-              <td class="action"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalScrollable">Visualizar</button>
-                <a href="edit-venda.html"><button type="button" class="btn btn-warning">Editar</button></a>
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Excluir</button></td>
-            </tr>
-            <tr>
-              <td>XX</td>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>15/98/6206</td>
-              <td class="action"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalScrollable">Visualizar</button>
-                <a href="edit-venda.html"><button type="button" class="btn btn-warning">Editar</button></a>
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Excluir</button></td>
+              <td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModalScrollable">Visualizar</button>
+                <a href="edit-venda.html"><button type="button" class="btn btn-warning btn-sm">Editar</button></a>
+                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter">Excluir</button></td>
             </tr>
           </tbody>
         </table>
@@ -74,20 +61,20 @@
 
     <!-- Modal excluir -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalCenterTitle"></h5>
+            <h5 class="modal-title" id="exampleModalCenterTitle">Excluir Venda?</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            Deseja excluir essa venda?
+            <p>Tem certeza que deseja excluir essa venda?</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary">Excluir</button>
+            <a class="btn btn-danger" href="#">Confirmar</a>
           </div>
         </div>
       </div>
