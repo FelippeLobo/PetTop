@@ -33,7 +33,6 @@ class Roteador
     {
         if(array_key_exists($uri,$this->rotas[$tipoRequisicao]))
         {
-            //return $this->rotas[$tipoRequisicao][$uri];
             $parametros = explode('@',$this->rotas[$tipoRequisicao][$uri]);
             return $this->chamarAcao($parametros[0],$parametros[1]);
         }

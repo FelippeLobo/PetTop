@@ -1,6 +1,4 @@
 <?php
-$roteador->get('PetTop','Teste@ddDeTeste');
-
 $roteador->get('PetTop/Produtos','Produto@listaProduto');
 $roteador->get('PetTop/apagarProduto','Produto@apagarProduto');
 $roteador->get('PetTop/editarProduto','Produto@editarProdutoView');
