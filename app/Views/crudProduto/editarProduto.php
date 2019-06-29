@@ -18,16 +18,16 @@
                 <div class="row">    
                     <div class="form-group col">
                           <label for="exampleFormControlInput1">Nome</label>
-                          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome do Produto" name="nome" value="<?=$produto[0]->nome?>">
+                          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome do Produto" name="nome" value="<?=$produto[0]->nome?>" required>
                     </div>
                     <div class="form-group col">
                         <label for="exampleFormControlInput1">Preço</label>
-                        <input type="number" step="0.01" min="0" class="form-control" id="exampleFormControlInput1" placeholder="Preço do Produto" name="preco" value="<?=$produto[0]->preco?>">
+                        <input type="number" step="0.01" min="0" class="form-control" id="exampleFormControlInput1" placeholder="Preço do Produto" name="preco" value="<?=$produto[0]->preco?>" required>
                     </div>
                 </div>
                 <div class="form-group">
                       <label for="exampleFormControlSelect1">Categoria</label>
-                      <select class="form-control" id="exampleFormControlSelect1" name="id_categoria">
+                      <select class="form-control" id="exampleFormControlSelect1" name="id_categoria" required>
                         <?php foreach($categorias as $categoria): ?>
                           <?php if($categoria->id == $produto[0]->id_categoria): ?>
                             <option value="<?=$categoria->id?>" selected><?=$categoria->nome?></option>
