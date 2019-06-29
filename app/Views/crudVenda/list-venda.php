@@ -34,7 +34,7 @@
                 <td><?=$venda->id?></td>
                 <td><?=$produto["venda {$venda->id}"][0]->nome?></td>
                 <td><?=$cliente["venda {$venda->id}"][0]->nome?></td>
-                <td><?=$venda->data_venda?></td>
+                <td><?=date('d/m/Y',strtotime($venda->data_venda))?></td>
                 <td>
                   <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#vendaModal<?=$venda->id?>">Visualizar</button>
                   
@@ -52,9 +52,9 @@
                           <p><b>Vendedor:</b> <?=$usuario["venda {$venda->id}"][0]->nome?></p>
                           <p><b>Cliente:</b> <?=$cliente["venda {$venda->id}"][0]->nome?></p>
                           <p><b>Produto:</b> <?=$produto["venda {$venda->id}"][0]->nome?></p>
-                          <p><b>Desconto:</b> <?=$venda->desconto?></p>
+                          <p><b>Desconto:</b> R$ <?=number_format($venda->desconto,2)?></p>
                           <p><b>Quantidade:</b> <?=$venda->qtd_vendida?></p>
-                          <p><b>Data:</b> <?=$venda->data_venda?></p>
+                          <p><b>Data:</b> <?=date('d/m/Y',strtotime($venda->data_venda))?></p>
                           <p><b>Observações:</b><br><?=$venda->anotacoes?></p>
                         </div>
                         <div class="modal-footer">

@@ -27,7 +27,7 @@ class Venda
             $cliente["venda {$venda->id}"] = App::get('bancoDeDados')->selecionarOnde('cliente',"id = {$venda->id_cliente}");
         }
         
-        require 'app/Views/crudVenda/list-venda.php';
+        require 'app/Views/layout/layout.php';
     }
 
     public function apagarVenda()
