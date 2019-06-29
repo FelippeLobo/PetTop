@@ -16,7 +16,7 @@
     <div class="container cont-lista">
       <div class="form-row buttonadd">
         <h1>Vendas</h1>
-        <a href="add-venda.html"><button type="button" class="btn btn-primary"><i class="fas fa-plus"></i> Adicionar uma venda</button></a>
+        <a href="criarVenda"><button type="button" class="btn btn-primary"><i class="fas fa-plus"></i> Adicionar uma venda</button></a>
       </div>
       <table class="table table-striped lista-in">
           <thead> 

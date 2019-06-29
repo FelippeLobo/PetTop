@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="container formulario">
-      <h2>Editar venda</h2>
+      <h1>Editar venda</h1>
         <form action="editarVenda/editando?id=<?=$vendaId?>" method="post">
           <div class="form-row">
           <div class="form-group col-md-4">

@@ -12,5 +12,7 @@ $roteador->view('PetTop/Produtos','app/Views/crudProduto/crudProduto.php');
 $roteador->get('PetTop/Vendas','Venda@listaVenda');
 $roteador->get('PetTop/apagarVenda','Venda@apagarVenda');
 $roteador->get('PetTop/editarVenda','Venda@editarVendaView');
-$roteador->post('PetTop/editarVenda/editando','Venda@editarVenda')
+$roteador->post('PetTop/editarVenda/editando','Venda@editarVenda');
+$roteador->get('PetTop/criarVenda','Venda@adicionarVendaView');
+$roteador->post('PetTop/criarVenda/adicionando','Venda@adicionarVenda');
 ?>
