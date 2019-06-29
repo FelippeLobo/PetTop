@@ -29,5 +29,12 @@ class Venda
         
         require 'app/Views/crudVenda/list-venda.php';
     }
+
+    public function apagarProduto()
+    {
+        $venda = $_GET['id'];
+        App::get('bancoDeDados')->apagar('vendas',$venda);
+        header('Location: '.$_SERVER['HTTP_REFERER']);
+    }
 }
 ?>

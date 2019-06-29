@@ -36,10 +36,10 @@
                 <td><?=$cliente["venda {$venda->id}"][0]->nome?></td>
                 <td><?=$venda->data_venda?></td>
                 <td>
-                  <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModalScrollable">Visualizar</button>
+                  <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#vendaModal<?=$venda->id?>">Visualizar</button>
                   
                   <!-- Modal vizualizar -->
-                  <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                  <div class="modal fade" id="vendaModal<?=$venda->id?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-scrollable" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
@@ -66,10 +66,10 @@
                   
                   <a href="#"><button type="button" class="btn btn-warning btn-sm">Editar</button></a>
                   
-                  <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter">Excluir</button>
+                  <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalForExclusions<?=$venda->id?>">Excluir</button>
                 
                   <!-- Modal excluir -->
-                  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal fade" id="modalForExclusions<?=$venda->id?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
@@ -83,7 +83,7 @@
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                          <a class="btn btn-danger" href="#">Confirmar</a>
+                          <a class="btn btn-danger" href="apagarVenda?id=<?=$venda->id?>">Confirmar</a>
                         </div>
                       </div>
                     </div>
