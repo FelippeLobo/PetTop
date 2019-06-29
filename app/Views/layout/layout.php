@@ -83,7 +83,7 @@
                         </span>
                         <button type="button" class="btn btn-light">Sair <i class="fas fa-sign-out-alt"></i></button>
                 </nav>
-                <?php require Roteador::carregar('rotas.php')->direcionarView(Requisicao::uri()); ?>
+                <?php require Roteador::carregar('app/rotas.php')->direcionarView(Requisicao::uri()); ?>
     
         </div>
         

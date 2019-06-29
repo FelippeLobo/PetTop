@@ -23,7 +23,7 @@ class Produto
             $categoria["produto {$produto->id}"] = App::get('bancoDeDados')->selecionarOnde('categoria',"id = {$produto->id_categoria}");
         }
 
-        require 'Views/layout/layout.php';
+        require 'app/Views/layout/layout.php';
     }
 
     public function apagarProduto()
@@ -38,7 +38,7 @@ class Produto
         $produtoId = $_GET['id'];
         $produto = App::get('bancoDeDados')->selecionarOnde('produtos',"id = {$produtoId}");
         $categorias = App::get('bancoDeDados')->selecionarTudo('categoria');
-        require 'Views/crudProduto/editarProduto.php';
+        require 'app/Views/crudProduto/editarProduto.php';
     }
 
     public function editarProduto()
@@ -57,7 +57,7 @@ class Produto
     public function adicionarProdutoView()
     {
         $categorias = App::get('bancoDeDados')->selecionarTudo('categoria');
-        require 'Views/crudProduto/adicionarProduto.php';
+        require 'app/Views/crudProduto/adicionarProduto.php';
     }
 
     public function adicionarProduto()

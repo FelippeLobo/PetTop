@@ -58,7 +58,7 @@ class Roteador
 
     protected function chamarAcao($controller,$acao)
     {
-        require "controllers/{$controller}.php";
+        require "app/controllers/{$controller}.php";
         $instancia = new $controller;
         return $instancia->$acao();
     }
