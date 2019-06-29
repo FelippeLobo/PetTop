@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>PetTop</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="layout/assets/bootstrap-4.3.1-dist/css/bootstrap.min.css">
@@ -84,7 +83,7 @@
                         </span>
                         <button type="button" class="btn btn-light">Sair <i class="fas fa-sign-out-alt"></i></button>
                 </nav>
-                <?php require Roteador::carregar('rotas.php')->direcionar(Requisicao::uri(),'VIEW'); ?>
+                <?php require Roteador::carregar('rotas.php')->direcionarView(Requisicao::uri()); ?>
     
         </div>
         
