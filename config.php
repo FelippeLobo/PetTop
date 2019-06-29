@@ -1,4 +1,5 @@
 <?php
+//Configuracao do banco de dados
 return[
     'bancoDeDados'=>[
         'nome'=>'pettop',

@@ -1,6 +1,7 @@
 <?php
 class BancoDeDados
 {
+    //Funcao responsavel por conectar o sistema ao banco de dados, ela exige um arquivo de configuracao
     public static function conectar($config)
     {
         try
