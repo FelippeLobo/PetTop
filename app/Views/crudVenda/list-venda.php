@@ -19,90 +19,112 @@
         <a href="add-venda.html"><button type="button" class="btn btn-primary"><i class="fas fa-plus"></i> Adicionar uma venda</button></a>
       </div>
       <table class="table table-striped lista-in">
-          <thead>
+          <thead> 
             <tr>
               <th scope="col">ID</th>
               <th scope="col">Produto</th>
               <th scope="col">Cliente</th>
               <th scope="col">Data</th>
-              <th scope="col" class="action"></th>
+              <th scope="col" class="action">Ações</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>XX</td>
-              <td>Coleira</td>
-              <td>Maria</td>
-              <td>01/09/2006</td>
-              <td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModalScrollable">Visualizar</button>
-                <a href="edit-venda.html"><button type="button" class="btn btn-warning btn-sm">Editar</button></a>
-                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter">Excluir</button></td>
-            </tr>
+            <?php foreach($vendas as $venda): ?> 
+              <tr>
+                <td><?=$venda->id?></td>
+                <td><?=$produto["venda {$venda->id}"][0]->nome?></td>
+                <td><?=$cliente["venda {$venda->id}"][0]->nome?></td>
+                <td><?=$venda->data_venda?></td>
+                <td>
+                  <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModalScrollable">Visualizar</button>
+                  
+                  <!-- Modal vizualizar -->
+                  <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalScrollableTitle">Venda #<?=$venda->id?></h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <p><b>Cliente:</b> <?=$cliente["venda {$venda->id}"][0]->nome?></p>
+                          <p><b>Produto:</b> <?=$produto["venda {$venda->id}"][0]->nome?></p>
+                          <p><b>Desconto:</b> <?=$venda->desconto?></p>
+                          <p><b>Quantidade:</b> <?=$venda->qtd_vendida?></p>
+                          <p><b>Data:</b> <?=$venda->data_venda?></p>
+                          <p><b>Observações:</b><br><?=$venda->anotacoes?></p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <a href="#"><button type="button" class="btn btn-warning btn-sm">Editar</button></a>
+                  
+                  <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter">Excluir</button>
+                
+                  <!-- Modal excluir -->
+                  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalCenterTitle">Excluir Venda?</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <p>Tem certeza que deseja excluir essa venda?</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                          <a class="btn btn-danger" href="#">Confirmar</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            <?php endforeach; ?> 
           </tbody>
         </table>
         <nav aria-label="Page navigation example">
-          <ul class="pagination">
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-              </a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-              </a>
-            </li>
-          </ul>
+            <ul class="pagination">
+                <?php if($pagAtual == "1"):?>
+                  <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Previous">
+                          <span aria-hidden="true">&laquo;</span>
+                      </a>
+                  </li>
+                <?php else: ?>
+                  <li class="page-item">
+                      <a class="page-link" href="?pag=<?=$pagAtual-1?>" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                      </a>
+                  </li>
+                <?php endif; ?>
+                <?php for($i="1";$i<=$totalPag;$i++):?>
+                  <li class="page-item"><a class="page-link" href="?pag=<?=$i?>"><?=$i?></a></li>
+                <?php endfor; ?>
+                <?php if($pagAtual == $totalPag):?>
+                  <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                      </a>
+                  </li>
+                <?php else: ?>
+                  <li class="page-item">
+                      <a class="page-link" href="?pag=<?=$pagAtual+1?>" aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                      </a>
+                  </li>
+                <?php endif; ?>
+            </ul>
         </nav>
-    </div>
-
-    <!-- Modal excluir -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalCenterTitle">Excluir Venda?</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p>Tem certeza que deseja excluir essa venda?</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-            <a class="btn btn-danger" href="#">Confirmar</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal vizualizar -->
-    <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalScrollableTitle">Cliente XX</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <h4>Cliente:</h4>
-            <h4>Produto:</h4>
-            <h4>Desconto:</h4>
-            <h4>Quantidade:</h4>
-            <h4>Data:</h4>
-            <h4>Observações:</h4>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-          </div>
-        </div>
-      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
