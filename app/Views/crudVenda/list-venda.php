@@ -49,6 +49,7 @@
                           </button>
                         </div>
                         <div class="modal-body">
+                          <p><b>Vendedor:</b> <?=$usuario["venda {$venda->id}"][0]->nome?></p>
                           <p><b>Cliente:</b> <?=$cliente["venda {$venda->id}"][0]->nome?></p>
                           <p><b>Produto:</b> <?=$produto["venda {$venda->id}"][0]->nome?></p>
                           <p><b>Desconto:</b> <?=$venda->desconto?></p>
