@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="app/Views/crudCargo/css-cargo/style-cargo.css">
+    <link rel="stylesheet" href="public/cssCargo/style-cargo.css">
     <title>Criar cargo</title>
   </head>
   <body>
