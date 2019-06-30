@@ -19,17 +19,17 @@
 </head>
 
 <body>
-<?php if (isset($_SESSION['mensagem'])) : ?>
-        <div class="alert alert-<?= $_SESSION['tipo_msg'] ?> alert-dismissible fade show" role="alert">
-            <?php
-            echo $_SESSION['mensagem'];
-            unset($_SESSION['mensagem']);
-            ?>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-<?php endif ?>
+  <?php if (isset($_SESSION['mensagem'])) : ?>
+    <div class="alert alert-<?= $_SESSION['tipo_msg'] ?> alert-dismissible fade show" role="alert">
+        <?php
+        echo $_SESSION['mensagem'];
+        unset($_SESSION['mensagem']);
+        ?>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+  <?php endif ?>
         <!-- Page Content  -->
                 <div class="container">
                     <div class="row title">

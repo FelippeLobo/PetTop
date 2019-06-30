@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 class Categoria
 {
     public function listaCategoria()
@@ -29,6 +31,8 @@ class Categoria
     {
         $categoria = $_GET['id'];
         App::get('bancoDeDados')->apagar('categoria',$categoria);
+        $_SESSION['mensagem'] = "Categoria excluida com sucesso!";
+        $_SESSION['tipo_msg'] = "danger";
         header('Location: '.$_SERVER['HTTP_REFERER']);
     }
 
@@ -44,6 +48,8 @@ class Categoria
         $categoriaId = $_GET['id'];
         $dados = ['nome'=>$_POST['nome']];
         App::get('bancoDeDados')->editar('categoria',$dados,$categoriaId);
+        $_SESSION['mensagem'] = "Categoria editada com sucesso!";
+        $_SESSION['tipo_msg'] = "primary";
         header('Location: /PetTop/Categorias');
     }
 
@@ -56,6 +62,8 @@ class Categoria
     {
         $dados = ['nome'=>$_POST['nome']];
         App::get('bancoDeDados')->inserir('categoria',$dados);
+        $_SESSION['mensagem'] = "Categoria criada com sucesso!";
+        $_SESSION['tipo_msg'] = "success";
         header('Location: /PetTop/Categorias');
     }
 }
