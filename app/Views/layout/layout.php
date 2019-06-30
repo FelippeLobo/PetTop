@@ -8,9 +8,9 @@
 
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="app/Views/layout/assets/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/bootstrap-4.3.1-dist/css/bootstrap.min.css">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="app/Views/layout/assets/css/styles.css">
+    <link rel="stylesheet" href="public/cssLayout/styles.css">
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
@@ -34,26 +34,26 @@
 
             <ul class="list-unstyled components">
                 <li>
-                    <a href="#">
+                    <a href="/PetTop/DashBoard">
                         <i class="fas fa-home"></i>
-                        <div class="icon-legend">Home</div>
+                        <div class="icon-legend">DashBoard</div>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/PetTop/Clientes">
                         <i class="fas fa-briefcase"></i>
-                        <div class ="icon-legend">About</div>
+                        <div class ="icon-legend">Clientes</div>
                     </a>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="">
+                    <a href="/PetTop/Setores">
                         <i class="fas fa-copy"></i>
-                        <div class="icon-legend">Pages</div>
+                        <div class="icon-legend">Setores</div>
                     </a>
                     
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/PetTop/Produtos">
                         <i class="fas fa-image"></i>
-                        <div class="icon-legend">Portfolio</div>
+                        <div class="icon-legend">Produtos</div>
                     </a>
                 </li>
                 <li>
@@ -95,7 +95,7 @@
     <!-- Popper.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
-    <script src="app/Views/layout/assets/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+    <script src="public/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
