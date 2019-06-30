@@ -1,5 +1,7 @@
 <?php
-$bancoDeDados = require 'core/bootstrap.php';
+//Requerindo configuracao do sistema para o index
+require 'core/bootstrap.php';
 
-require Roteador::carregar('rotas.php')->direcionar(Requisicao::uri(),Requisicao::metodo());
+//Chamando instancia da classe e funcao requisitada na url 
+Roteador::carregar('app/rotas.php')->direcionar(Requisicao::uri(),Requisicao::metodo());
 ?>
