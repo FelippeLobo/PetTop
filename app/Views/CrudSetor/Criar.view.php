@@ -9,9 +9,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="sidebarStyle.css">
-        <link rel="stylesheet" href="styleSetor.css">
-        <link rel="stylesheet" href="StyleCliente.js">
+        
+        <link rel="stylesheet" href="public/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="public/cssSetor/styleSetor.css">
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
             integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
             crossorigin="anonymous"></script>
@@ -21,7 +21,7 @@
     
         <script defer src="fontawesome-free-5.8.1-web/js/solid.js"> </script>
         <script defer src="fontawesome-free-5.8.1-web/css/all.css"> </script>
-
+        
      
     <title>Cria Setor</title>
 </head>
@@ -32,20 +32,22 @@
 
             <div class="container">
                 <h1 class="page-header cabeçalho">Criar Setor</h1>
-                <form>
+                <form method="post" action="criarSetor/criando">
                        
                         <div class="form-row">
             
                             <div class="form-group col-md-6 col-6">
-                                <label for="inputEmail4">Nome</label>
-                                <input type="text" class="form-control" id="inputEmail4" placeholder="">
+                                <label>Nome</label>
+                                <input type="text" name="nome" class="form-control" placeholder="Insira o nome do setor" >
                             </div>
                             
                         </div>
             
                        
                         <button type="submit" class="btn btn-primary">Confirmar</button>
-                        <a href="CrudSetor.html" class="btn btn-danger">Cancelar</a>
+                        <a href="Setores" class="btn btn-danger">Cancelar</a>
+                        
+                       
                     </form>
             
                 </div>
