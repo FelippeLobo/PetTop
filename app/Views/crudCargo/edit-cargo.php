@@ -13,7 +13,7 @@
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label>Nome</label>
-                  <input type="text" class="form-control" placeholder="Nome" name="nome" value="<?=$cargo[0]->nome?>">
+                  <input type="text" class="form-control" placeholder="Nome" name="nome" value="<?=$cargo[0]->nome?>" required>
                 </div>
               </div>
               <div class="form-group">

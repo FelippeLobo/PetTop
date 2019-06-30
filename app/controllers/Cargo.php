@@ -55,12 +55,16 @@ class Cargo
 
     public function adicionarCargoView()
     {
-
+        require 'app/Views/layout/layout.php';
     }
 
     public function adicionarCargo()
     {
-
+        $dados = ['nome'=>$_POST[nome]];
+        App::get('bancoDeDados')->inserir('cargos',$dados);
+        $_SESSION['mensagem'] = "Cargo criado com sucesso!";
+        $_SESSION['tipo_msg'] = "success";
+        header('Location: /PetTop/Cargos');
     }
 }
 ?>
