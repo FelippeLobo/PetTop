@@ -13,7 +13,7 @@
   </head>
   <body>
     <div class="container centralizar-add-edit">
-            <h1>Editar Produto</h1>
+            <h1 class="title page-header">Editar Produto</h1>
             <form action="editarProduto/editando?id=<?=$produtoId?>" method="post">
                 <div class="row">    
                     <div class="form-group col">

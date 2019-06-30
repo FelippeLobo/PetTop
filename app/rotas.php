@@ -7,6 +7,8 @@ $roteador->post('PetTop/editarProduto/editando','Produto@editarProduto');
 $roteador->get('PetTop/criarProduto','Produto@adicionarProdutoView');
 $roteador->post('PetTop/criarProduto/adicionando','Produto@adicionarProduto');
 $roteador->view('PetTop/Produtos','app/Views/crudProduto/crudProduto.php');
+$roteador->view('PetTop/editarProduto','app/Views/crudProduto/editarProduto.php');
+$roteador->view('PetTop/criarProduto','app/Views/crudProduto/adicionarProduto.php');
 
 //Categoria
 $roteador->get('PetTop/Categorias','Categoria@listaCategoria');

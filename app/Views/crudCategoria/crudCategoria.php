@@ -47,7 +47,7 @@
                           <tr class="row">
                             <th class="col-sm-2 col-2 col-md-2"><?=$categoria->id?></th>
                             <td class="col-sm-4 col-8 col-md-6"><?=$categoria->nome?></td>
-                            <td class="col-sm-6 col-8 col-md-4">
+                            <td class="col-sm-6 col-12 col-md-4">
                                 <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
                                 data-target="#categoryModal<?=$categoria->id?>">
                                     Visualizar
