@@ -9,7 +9,7 @@
     <title>Categorias</title>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="app/Views/crudCategoria/assets/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/bootstrap-4.3.1-dist/css/bootstrap.min.css">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="app/Views/crudCategoria/assets/css/styles.css">
     <!-- Font Awesome CSS -->
@@ -29,8 +29,9 @@
         <!-- Page Content  -->    
                 <div class="container">
                     <div class="row header">
-                        <h1 class="col">Categorias</h1>
-                        <a class="btn btn-primary col-sm-3" href="criarCategoria"><i class="fas fa-plus"></i> Adicionar Nova Categoria </a>
+                        <h1 class="col-md-10 col-10 page-header d-none d-sm-block">Gerenciar Categorias</h1>
+                        <a class="btn btn-primary col-md-2 col-2 categoria d-none d-sm-none d-md-none d-lg-block " href="criarCategoria"><i class="fas fa-plus"></i> Nova Categoria </a>
+                        <a class="btn btn-primary col-md-2 col-2 categoria2 d-block d-sm-block d-md-block d-lg-none" href="criarCategoria"><i class="fas fa-plus"></i></a>
                     </div>
                     <table class="table table-striped">
                         <thead>
