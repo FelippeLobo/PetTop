@@ -18,7 +18,7 @@
                 <div class="form-row">
                   <div class="form-group col-6">
                       <label for="exampleFormControlInput1">Nome</label>
-                      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome da Categoria" name="nome">
+                      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome da Categoria" name="nome" required>
                   </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Confirmar</button>
