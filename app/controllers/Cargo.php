@@ -29,7 +29,11 @@ class Cargo
 
     public function apagarCargo()
     {
-
+        $cargo = $_GET['id'];
+        App::get('bancoDeDados')->apagar('cargos',$cargo);
+        $_SESSION['mensagem'] = "Cargo excluido com sucesso!";
+        $_SESSION['tipo_msg'] = "danger";
+        header('Location: '.$_SERVER['HTTP_REFERER']);
     }
 
     public function editarCargoView()
