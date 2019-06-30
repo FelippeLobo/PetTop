@@ -1,4 +1,5 @@
 <?php
+//Produto
 $roteador->get('PetTop/Produtos','Produto@listaProduto');
 $roteador->get('PetTop/apagarProduto','Produto@apagarProduto');
 $roteador->get('PetTop/editarProduto','Produto@editarProdutoView');
@@ -6,4 +7,13 @@ $roteador->post('PetTop/editarProduto/editando','Produto@editarProduto');
 $roteador->get('PetTop/criarProduto','Produto@adicionarProdutoView');
 $roteador->post('PetTop/criarProduto/adicionando','Produto@adicionarProduto');
 $roteador->view('PetTop/Produtos','app/Views/crudProduto/crudProduto.php');
+
+//Categoria
+$roteador->get('PetTop/Categorias','Categoria@listaCategoria');
+$roteador->get('PetTop/apagarCategoria','Categoria@apagarCategoria');
+$roteador->get('PetTop/editarCategoria','Categoria@editarCategoriaView');
+$roteador->post('PetTop/editarCategoria/editando','Categoria@editarCategoria');
+$roteador->get('PetTop/criarCategoria','Categoria@adicionarCategoriaView');
+$roteador->post('PetTop/criarCategoria/adicionando','Categoria@adicionarCategoria');
+$roteador->view('PetTop/Categorias','app/Views/crudCategoria/crudCategoria.php');
 ?>
