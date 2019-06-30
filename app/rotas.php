@@ -16,7 +16,10 @@ $roteador->post('PetTop/editarCategoria/editando','Categoria@editarCategoria');
 $roteador->get('PetTop/criarCategoria','Categoria@adicionarCategoriaView');
 $roteador->post('PetTop/criarCategoria/adicionando','Categoria@adicionarCategoria');
 $roteador->view('PetTop/Categorias','app/Views/crudCategoria/crudCategoria.php');
+$roteador->view('PetTop/editarCategoria','app/Views/crudCategoria/editarCategoria.php');
+$roteador->view('PetTop/criarCategoria','app/Views/crudCategoria/adicionarCategoria.php');
 
+//Cliente
 $roteador->get('PetTop/Clientes', 'Clientes@listarClientes');
 $roteador->get('PetTop/apagaCliente' , 'Clientes@deletarCliente');
 $roteador->get('PetTop/editarCliente' , 'Clientes@editarClienteView');
@@ -27,7 +30,7 @@ $roteador->view('PetTop/Clientes' , 'app/Views/CrudCliente/CrudCliente.view.php'
 $roteador->view('PetTop/editarCliente' , 'app/Views/CrudCliente/Update.view.php');
 $roteador->view('PetTop/criarCliente' , 'app/Views/CrudCliente/Criar.view.php');
 
-
+//Setor
 $roteador->get('PetTop/Setores', 'Setor@listarSetores');
 $roteador->get('PetTop/apagaSetor' , 'Setor@deletarSetor');
 $roteador->get('PetTop/editarSetor' , 'Setor@editarSetorView');

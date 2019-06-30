@@ -36,7 +36,7 @@ class Categoria
     {
         $categoriaId = $_GET['id'];
         $categoria = App::get('bancoDeDados')->selecionarOnde('categoria',"id = {$categoriaId}");
-        require 'app/Views/crudCategoria/editarCategoria.php';
+        require 'app/Views/layout/layout.php';
     }
 
     public function editarCategoria()
@@ -49,7 +49,7 @@ class Categoria
 
     public function adicionarCategoriaView()
     {
-        require 'app/Views/crudCategoria/adicionarCategoria.php';
+        require 'app/Views/layout/layout.php';
     }
 
     public function adicionarCategoria()
