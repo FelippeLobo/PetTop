@@ -43,4 +43,14 @@ $roteador->view('PetTop/Setores' , 'app/Views/CrudSetor/crudSetor.view.php');
 $roteador->view('PetTop/editarSetor' , 'app/Views/CrudSetor/Update.view.php');
 $roteador->view('PetTop/criarSetor' , 'app/Views/CrudSetor/Criar.view.php');
 
+//Cargo
+$roteador->get('PetTop/Cargos','Cargo@listaCargo');
+$roteador->get('PetTop/apagarCargo','Cargo@apagarCargo');
+$roteador->get('PetTop/editarCargo','Cargo@editarCargoView');
+$roteador->post('PetTop/editarCargo/editando','Cargo@editarCargo');
+$roteador->get('PetTop/criarCargo','Cargo@adicionarCargoView');
+$roteador->post('PetTop/criarCargo/adicionando','Cargo@adicionarCargo');
+$roteador->view('PetTop/Cargos','app/Views/crudCargo/list-cargo.php');
+$roteador->view('PetTop/editarCargo','app/Views/crudCargo/edit-cargo.php');
+$roteador->view('PetTop/criarCargo','app/Views/crudCargo/add-cargo.php');
 ?>

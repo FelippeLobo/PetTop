@@ -3,8 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="Views/crudCargo/css-cargo/style-cargo.css">
+    <link rel="stylesheet" href="app/Views/crudCargo/css-cargo/style-cargo.css">
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
@@ -13,25 +12,38 @@
     <title>Cargos</title>
   </head>
   <body>
-    <div class="container cont-lista">
-      <div class="form-row buttonadd">
-        <h1>Cargos</h1>
-        <a href="criarCargo"><button type="button" class="btn btn-primary"><i class="fas fa-plus"></i> Adicionar um cargo</button></a>
+    <?php  if (isset($_SESSION['mensagem'])) : ?>
+      <div class="alert alert-<?= $_SESSION['tipo_msg'] ?> alert-dismissible fade show" role="alert">
+          <?php
+          echo $_SESSION['mensagem'];
+          unset($_SESSION['mensagem']);
+          ?>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
       </div>
-      <table class="table table-striped lista-in">
+    <?php endif ?>
+    <div class="container">
+      <div class="row header">
+        <h1 class="col-md-10 col-10 page-header d-none d-sm-block">Gerenciar Cargos</h1>
+        <h1 class="col-md-10 col-10 page-header d-block d-sm-none">Cargos</h1>
+        <a class="btn btn-primary col-md-2 col-2 cargo d-none d-sm-none d-md-none d-lg-block" href="criarCargo"><i class="fas fa-plus"></i> Novo Cargo</a>
+        <a class="btn btn-primary col-md-2 col-2 cargo2 d-block d-sm-block d-md-block d-lg-none" href="criarCargo"><i class="fas fa-plus"></i></a>
+      </div>
+      <table class="table table-striped table-hover table-condensed table-row">
           <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Cargo</th>
-              <th class="action" scope="col">Ações</th>
+            <tr class="row">
+              <th class="col-sm-2 col-2 col-md-2">ID</th>
+              <th class="col-sm-4 col-10 col-md-6">Cargo</th>
+              <th class="col-sm-6 col-4 col-md-4 d-none d-sm-block">Ações</th>
             </tr>
           </thead>
           <tbody>
             <?php foreach($cargos as $cargo): ?>
-            <tr>
-                <td scope="row"><?=$cargo->id?></td>
-                <td><?=$cargo->nome?></td>
-                <td>
+            <tr class="row">
+                <td class="col-sm-2 col-2 col-md-2"><b><?=$cargo->id?></td>
+                <td class="col-sm-4 col-8 col-md-6"><?=$cargo->nome?></td>
+                <td class="col-sm-6 col-12 col-md-4">
                   <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#cargoModal<?=$cargo->id?>">Visualizar</button>
 
                     <!-- Modal vizualizar -->
@@ -121,7 +133,6 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   
   </body>
 </html>
