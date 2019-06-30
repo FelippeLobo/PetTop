@@ -38,12 +38,19 @@ class Cargo
 
     public function editarCargoView()
     {
-
+        $cargoId = $_GET['id'];
+        $cargo = App::get('bancoDeDados')->selecionarOnde('cargos',"id = {$cargoId}");
+        require 'app/Views/layout/layout.php';
     }
 
     public function editarCargo()
     {
-
+        $cargoId = $_GET['id'];
+        $dados = ['nome'=>$_POST['nome']];
+        App::get('bancoDeDados')->editar('cargos',$dados,$cargoId);
+        $_SESSION['mensagem'] = "Cargo editado com sucesso!";
+        $_SESSION['tipo_msg'] = "primary";
+        header('Location: /PetTop/Cargos');
     }
 
     public function adicionarCargoView()

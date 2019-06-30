@@ -1,38 +1,3 @@
-/*
-
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-body {
-    font-family: 'Poppins', sans-serif;
-    background: #fafafa;
-}
-
-p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1em;
-    font-weight: 300;
-    line-height: 1.7em;
-    color: black;
-}
-
-.cont-lista{
-    background-color: #FAFAFA;
-    margin-top:40px;
-}
-
-.lista-in{
-    margin-top: 7px;
-}
-
-.action{
-    width: 25%;
-    height: 20%;
-}
-
-.buttonadd{
-    display: flex;
-    justify-content: space-between
-}
-*/
 .cargo
 {
     width: 10px;
@@ -59,10 +24,6 @@ p {
 {
     margin-top: 40px;
     border-top: 1px solid gray;
-}
-
-textarea{
-    resize: none;
 }
 
 .formulario {
