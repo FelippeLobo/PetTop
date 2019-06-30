@@ -22,7 +22,7 @@
     <!-- Popper.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
-    <script src="app/Views/crudCategoria/assets/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+    <script src="public/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -30,23 +30,24 @@
                 <div class="container">
                     <div class="row header">
                         <h1 class="col-md-10 col-10 page-header d-none d-sm-block">Gerenciar Categorias</h1>
+                        <h1 class="col-md-10 col-10 page-header d-block d-sm-none">Categorias</h1>
                         <a class="btn btn-primary col-md-2 col-2 categoria d-none d-sm-none d-md-none d-lg-block " href="criarCategoria"><i class="fas fa-plus"></i> Nova Categoria </a>
                         <a class="btn btn-primary col-md-2 col-2 categoria2 d-block d-sm-block d-md-block d-lg-none" href="criarCategoria"><i class="fas fa-plus"></i></a>
                     </div>
-                    <table class="table table-striped">
+                    <table class="table table-striped table-hover table-condensed table-row">
                         <thead>
-                          <tr>
-                            <th scope="col">ID</th>
-                            <th class="categories" scope="col">Categoria</th>
-                            <th class="actions" scope="col">Ações</th>
+                          <tr class="row">
+                            <th class="col-sm-2 col-2 col-md-2">ID</th>
+                            <th class="col-sm-4 col-10 col-md-6">Categoria</th>
+                            <th class="col-sm-6 col-4 col-md-4 d-none d-sm-block">Ações</th>
                           </tr>
                         </thead>
                         <tbody>
                         <?php foreach($categorias as $categoria) : ?>
-                          <tr>
-                            <th scope="row"><?=$categoria->id?></th>
-                            <td><?=$categoria->nome?></td>
-                            <td>
+                          <tr class="row">
+                            <th class="col-sm-2 col-2 col-md-2"><?=$categoria->id?></th>
+                            <td class="col-sm-4 col-8 col-md-6"><?=$categoria->nome?></td>
+                            <td class="col-sm-6 col-8 col-md-4">
                                 <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
                                 data-target="#categoryModal<?=$categoria->id?>">
                                     Visualizar

@@ -2,20 +2,6 @@
     DEMO STYLE
 */
 
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-body {
-    font-family: 'Poppins', sans-serif;
-    background: #fafafa;
-}
-
-p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1em;
-    font-weight: 300;
-    line-height: 1.7em;
-    color: #999;
-}
-
 a,
 a:hover,
 a:focus {
@@ -45,13 +31,6 @@ a:focus {
     border-bottom: 1px dashed #ddd;
     margin: 40px 0;
 }
-
-i,
-span {
-    display: inline-block;
-    font-size: 1.2em;
-}
-
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
@@ -218,7 +197,7 @@ a.article:hover {
     display: flex;
     justify-content: flex-end;
 }
-#content nav span
+#content .nav-hello-user span
 {
     color: black;
 }
@@ -228,7 +207,7 @@ a.article:hover {
 ----------------------------------------------------- */
 @media(max-width: 500px)
 {
-    #content nav span
+    #content .nav-hello-user span
     {
         display: none;
     }

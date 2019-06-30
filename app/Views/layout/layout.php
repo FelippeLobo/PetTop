@@ -77,7 +77,7 @@
 
         <!-- Page Content  -->
         <div id="content">    
-                <nav class="navbar navbar-light bg-light">
+                <nav class="navbar navbar-light bg-light nav-hello-user">
                         <span class="navbar-text">
                           Olá, usuário
                         </span>
