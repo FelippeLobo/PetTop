@@ -6,7 +6,22 @@ class Setor
 {
     public function listarSetores()
     {
-        $setores=App::get('bancoDeDados')->selecionarTudo('setor');
+        $registroPorPg = "6";
+        if(isset($_GET['pag']))
+        {
+            $pagAtual = $_GET['pag'];
+        }
+        else
+        {
+            $pagAtual = "1";
+        }
+        $catInicial = $pagAtual - 1;
+        $catInicial = $catInicial*$registroPorPg;
+        $numSetores = App::get('bancoDeDados')->contarRegistros('setor');
+        $totalPag = ceil($numSetores/$registroPorPg);
+        $setores = App::get('bancoDeDados')->selecionarComLimite('setor',[$catInicial,$registroPorPg]);
+        
+     
         require 'app/Views/layout/layout.php';
     }
 
@@ -33,20 +48,19 @@ class Setor
     }
 
     public function editarSetorView()
-    {
-        
+    {   
         $id = $_GET['edit'];
         $setor = App::get('bancoDeDados')->selecionarOnde('setor', "id = {$id} ");
+        
         require 'app/Views/layout/layout.php';
     }
 
     public function editarSetor()
     {
-        $id = $_GET['edit'];
+        $id = $_GET['idSetor'];
         if (isset($_POST['editar'])) {
 
             $dados = [
-                'id' => $_POST['id'],
                 'nome' => $_POST['nome']
             ];
 
@@ -55,7 +69,7 @@ class Setor
             $_SESSION['mensagem'] = "Setor editado com sucesso!";
             $_SESSION['tipo_msg'] = "primary";
 
-            header('Location: /CrudSetor');
+            header('Location: /PetTop/Setores');
         }
     }
 

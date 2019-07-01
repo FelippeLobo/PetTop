@@ -137,23 +137,38 @@
         </table>
 
         <nav aria-label="Page navigation example">
-            <ul class="pagination">
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-
+                        <ul class="pagination">
+                            <?php if($pagAtual == "1"):?>
+                              <li class="page-item">
+                                  <a class="page-link" href="#" aria-label="Previous">
+                                      <span aria-hidden="true">&laquo;</span>
+                                  </a>
+                              </li>
+                            <?php else: ?>
+                              <li class="page-item">
+                                  <a class="page-link" href="?pag=<?=$pagAtual-1?>" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                  </a>
+                              </li>
+                            <?php endif; ?>
+                            <?php for($i="1";$i<=$totalPag;$i++):?>
+                              <li class="page-item"><a class="page-link" href="?pag=<?=$i?>"><?=$i?></a></li>
+                            <?php endfor; ?>
+                            <?php if($pagAtual == $totalPag):?>
+                              <li class="page-item">
+                                  <a class="page-link" href="#" aria-label="Next">
+                                      <span aria-hidden="true">&raquo;</span>
+                                  </a>
+                              </li>
+                            <?php else: ?>
+                              <li class="page-item">
+                                  <a class="page-link" href="?pag=<?=$pagAtual+1?>" aria-label="Next">
+                                      <span aria-hidden="true">&raquo;</span>
+                                  </a>
+                              </li>
+                            <?php endif; ?>
+                        </ul>
+                    </nav>
     </div>
 
 
@@ -166,8 +181,7 @@
     <!-- Popper.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-
+    <script src="public/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 
 </body>
 
