@@ -45,20 +45,20 @@
                         <div class ="icon-legend">Clientes</div>
                     </a>
                     <a href="/PetTop/Setores">
-                        <i class="fas fa-copy"></i>
+                    <i class="fas fa-door-open"></i></i>
                         <div class="icon-legend">Setores</div>
                     </a>
                     
                 </li>
                 <li>
                     <a href="/PetTop/Produtos">
-                        <i class="fas fa-image"></i>
+                    <i class="fas fa-boxes"></i></i>
                         <div class="icon-legend">Produtos</div>
                     </a>
                 </li>
                 <li>
                     <a href="/PetTop/Categorias">
-                        <i class="fas fa-question"></i>
+                    <i class="fas fa-clipboard-list"></i></i>
                         <div class = "icon-legend">Categorias</div>
                     </a>
                 </li>
@@ -76,7 +76,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fas fa-paper-plane"></i>
+                    <i class="fas fa-file-invoice-dollar"></i></i>
                         <div class="icon-legend">Cargos</div>
                     </a>
                 </li>
