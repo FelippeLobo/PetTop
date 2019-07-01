@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 class Produto
 {
     public function listaProduto()
@@ -30,6 +32,8 @@ class Produto
     {
         $produto = $_GET['id'];
         App::get('bancoDeDados')->apagar('produtos',$produto);
+        $_SESSION['mensagem'] = "Produto excluido com sucesso!";
+        $_SESSION['tipo_msg'] = "danger";
         header('Location: '.$_SERVER['HTTP_REFERER']);
     }
 
@@ -38,7 +42,7 @@ class Produto
         $produtoId = $_GET['id'];
         $produto = App::get('bancoDeDados')->selecionarOnde('produtos',"id = {$produtoId}");
         $categorias = App::get('bancoDeDados')->selecionarTudo('categoria');
-        require 'app/Views/crudProduto/editarProduto.php';
+        require 'app/Views/layout/layout.php';
     }
 
     public function editarProduto()
@@ -51,13 +55,15 @@ class Produto
             'descricao'=>$_POST['descricao']
         ];
         App::get('bancoDeDados')->editar('produtos',$dados,$produtoId);
+        $_SESSION['mensagem'] = "Produto editado com sucesso!";
+        $_SESSION['tipo_msg'] = "primary";
         header('Location: /PetTop/Produtos');
     }
 
     public function adicionarProdutoView()
     {
         $categorias = App::get('bancoDeDados')->selecionarTudo('categoria');
-        require 'app/Views/crudProduto/adicionarProduto.php';
+        require 'app/Views/layout/layout.php';
     }
 
     public function adicionarProduto()
@@ -69,6 +75,8 @@ class Produto
             'descricao'=>$_POST['descricao']
         ];
         App::get('bancoDeDados')->inserir('produtos',$dados);
+        $_SESSION['mensagem'] = "Produto criado com sucesso!";
+        $_SESSION['tipo_msg'] = "success";
         header('Location: /PetTop/Produtos');
     }
 }
