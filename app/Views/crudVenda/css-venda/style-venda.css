@@ -1,39 +1,34 @@
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-body {
-    font-family: 'Poppins', sans-serif;
-    background: #fafafa;
+
+.venda
+{
+    width: 10px;
+    height:30px;
+    margin-top: 15px; 
+    padding-top: 3px;
 }
 
-p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1em;
-    font-weight: 300;
-    line-height: 1.7em;
-    color: black;
+.venda2
+{
+    width: 10px;
+    height:30px;
+    margin-top: 18px;   
+    padding-top:3px; 
+}
+
+.page-header
+{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 10px;
+}
+
+.header
+{
+    margin-top: 40px;
+    border-top: 1px solid gray;
 }
 
 .formulario {
     margin-top:25px;
-    background-color: #FAFAFA
-}
-
-.cont-lista{
-    background-color: #FAFAFA;
-    margin-top:40px;
-}
-
-.lista-in{
-    margin-top: 7px;
-}
-
-.action{
-    width: 25%;
-    height: 20%;
-}
-
-.buttonadd{
-    display: flex;
-    justify-content: space-between;
 }
 textarea{
     resize: none;

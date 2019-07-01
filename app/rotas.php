@@ -18,6 +18,8 @@ $roteador->post('PetTop/editarVenda/editando','Venda@editarVenda');
 $roteador->get('PetTop/criarVenda','Venda@adicionarVendaView');
 $roteador->post('PetTop/criarVenda/adicionando','Venda@adicionarVenda');
 $roteador->view('PetTop/Vendas','app/Views/crudVenda/list-venda.php');
+$roteador->view('PetTop/editarVenda','app/Views/crudVenda/edit-venda.php');
+$roteador->view('PetTop/criarVenda','app/Views/crudVenda/add-venda.php');
 
 //Categoria
 $roteador->get('PetTop/Categorias','Categoria@listaCategoria');

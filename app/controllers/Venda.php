@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 class Venda
 {
     public function listaVenda()
@@ -34,6 +36,8 @@ class Venda
     {
         $venda = $_GET['id'];
         App::get('bancoDeDados')->apagar('vendas',$venda);
+        $_SESSION['mensagem'] = "Venda excluida com sucesso!";
+        $_SESSION['tipo_msg'] = "danger";
         header('Location: '.$_SERVER['HTTP_REFERER']);
     }
 
@@ -44,7 +48,7 @@ class Venda
         $produtos = App::get('bancoDeDados')->selecionarTudo('produtos');
         $usuarios = App::get('bancoDeDados')->selecionarTudo('users');
         $clientes = App::get('bancoDeDados')->selecionarTudo('cliente');
-        require 'app/Views/crudVenda/edit-venda.php';
+        require 'app/Views/layout/layout.php';
     }
 
     public function editarVenda()
@@ -60,6 +64,8 @@ class Venda
             'anotacoes'=>$_POST['anotacoes']
         ];
         App::get('bancoDeDados')->editar('vendas',$dados,$vendaId);
+        $_SESSION['mensagem'] = "Venda editada com sucesso!";
+        $_SESSION['tipo_msg'] = "primary";
         header('Location: /PetTop/Vendas');
     }
 
@@ -68,7 +74,7 @@ class Venda
         $produtos = App::get('bancoDeDados')->selecionarTudo('produtos');
         $usuarios = App::get('bancoDeDados')->selecionarTudo('users');
         $clientes = App::get('bancoDeDados')->selecionarTudo('cliente');
-        require 'app/Views/crudVenda/add-venda.php';    
+        require 'app/Views/layout/layout.php';    
     }
 
     public function adicionarVenda()
@@ -83,6 +89,8 @@ class Venda
             'anotacoes'=>$_POST['anotacoes']
         ];
         App::get('bancoDeDados')->inserir('vendas',$dados);
+        $_SESSION['mensagem'] = "Categoria criada com sucesso!";
+        $_SESSION['tipo_msg'] = "success";
         header('Location: /PetTop/Vendas');    
     }
 }

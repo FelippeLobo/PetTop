@@ -12,29 +12,42 @@
     <title>Vendas</title>
   </head>
   <body>
-    <div class="container cont-lista">
-      <div class="form-row buttonadd">
-        <h1>Vendas</h1>
-        <a href="criarVenda"><button type="button" class="btn btn-primary"><i class="fas fa-plus"></i> Adicionar uma venda</button></a>
+  <?php if (isset($_SESSION['mensagem'])) : ?>
+    <div class="alert alert-<?= $_SESSION['tipo_msg'] ?> alert-dismissible fade show" role="alert">
+        <?php
+        echo $_SESSION['mensagem'];
+        unset($_SESSION['mensagem']);
+        ?>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+  <?php endif ?>
+    <div class="container">
+      <div class="row header">
+        <h1 class="col-md-10 col-10 page-header d-none d-sm-block">Gerenciar Vendas</h1>
+        <h1 class="col-md-10 col-10 page-header d-block d-sm-none">Vendas</h1>
+        <a class="btn btn-primary col-md-2 col-2 venda d-none d-sm-none d-md-none d-lg-block" href="criarVenda"><i class="fas fa-plus"></i> Nova Venda</a>
+        <a class="btn btn-primary col-md-2 col-2 venda2 d-block d-sm-block d-md-block d-lg-none" href="criarProduto"><i class="fas fa-plus"></i></a>
       </div>
-      <table class="table table-striped lista-in">
+      <table class="table table-striped table-hover table-condensed table-row">
           <thead> 
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Produto</th>
-              <th scope="col">Cliente</th>
-              <th scope="col">Data</th>
-              <th scope="col" class="action">Ações</th>
+            <tr class="row">
+              <th class="col-sm-1 col-2 col-md-2">ID</th>
+              <th class="col-sm-5 col col-md-2">Produto</th>
+              <th class="col-sm-5 col col-md-2">Cliente</th>
+              <th class="col-sm-5 col col-md-3 d-none d-sm-none d-md-block">Data</th>
+              <th class="col-sm-6 col-6 col-md-3 d-none d-sm-none d-md-block">Ações</th>
             </tr>
           </thead>
           <tbody>
             <?php foreach($vendas as $venda): ?> 
-              <tr>
-                <td><?=$venda->id?></td>
-                <td><?=$produto["venda {$venda->id}"][0]->nome?></td>
-                <td><?=$cliente["venda {$venda->id}"][0]->nome?></td>
-                <td><?=date('d/m/Y',strtotime($venda->data_venda))?></td>
-                <td>
+              <tr class="row">
+                <td class="col-sm-1 col-2 col-md-2"><b><?=$venda->id?></td>
+                <td class="col-sm-5 col col-md-2"><?=$produto["venda {$venda->id}"][0]->nome?></td>
+                <td class="col-sm-5 col col-md-2"><?=$cliente["venda {$venda->id}"][0]->nome?></td>
+                <td class="col-sm-5 col col-md-3 d-none d-sm-none d-md-block"><?=date('d/m/Y',strtotime($venda->data_venda))?></td>
+                <td class="col-sm-6 col-12 col-md-3">
                   <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#vendaModal<?=$venda->id?>">Visualizar</button>
                   
                   <!-- Modal vizualizar -->
