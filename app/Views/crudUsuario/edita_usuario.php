@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/styles.css">
 
     <title>Edita Usuário</title>
@@ -17,17 +17,17 @@
 <body>
     <div class="container">
         <h1 class="page-header">Edita Usuário</h1>
-        <form>
+        <form action="edita_usuario" id=<?=$user->id?> method="post">
             <div class="form-row">
                 <div class="form-group col-md-2 col-6">
                     <label for="inputPost">Cargo</label>
                     <select id="inputPost" class="form-control">
                         <option selected>Escolha...</option>
-                        <option>Cargo 1</option>
-                        <option>Cargo 2</option>
-                        <option>Cargo 3</option>
-                        <option>Cargo 4</option>
-                        <option>Cargo 5</option>
+                        <?php foreach($cargos as $cargo)
+                        {
+                           ?> <option value="<?php echo $cargo->id ?>"><?php echo $cargo->nome ?></option> <?php
+                        }
+                        ?>
                     </select>
                 </div>
             </div>
@@ -58,7 +58,7 @@
             <div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputPassword">Senha</label>
+                        <label for="inputPassword">Confirme a senha</label>
                         <input type="password" class="form-control" id="inputPassword"
                             placeholder="Confirme sua senha...">
                     </div>
@@ -74,7 +74,7 @@
                             </div>
                 <br>
                 <button type="submit" class="btn btn-primary">Confirmar</button>
-                <a class="btn btn-secondary" href="usuario_especifico.html" role="button">Cancelar</a>
+                <a class="btn btn-secondary" href="/PetTop" role="button">Cancelar</a>
                 <br>
             </div>
 
