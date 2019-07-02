@@ -23,7 +23,7 @@
         <nav id="sidebar">
             <div class="sidebar-header">
                 <button type="button" id="sidebarCollapse" class="btn btn-outline dark btn-lg normal-navbar">
-                    <span class="sidebarheader"> PET TOP</span>
+                    <span class="sidebarheader titulo">PET TOP</span>
                 </button>
                 <strong>
                     <button type="button" id="sidebarUnCollapse" class="btn btn-outline dark small-navbar">
@@ -91,7 +91,8 @@
         <div id="content">    
                 <nav class="navbar navbar-light bg-light nav-hello-user">
                         <span class="navbar-text">
-                          Olá, usuário
+                        
+                        Olá, <?php echo $_SESSION['nome'];?>
                         </span>
                         <form action="logout">
                         <button type="submit" class="btn btn-light">Sair <i class="fas fa-sign-out-alt"></i></button>
