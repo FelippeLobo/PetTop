@@ -60,9 +60,6 @@ $roteador->post('PetTop/Login/login' , 'Login@login');
 $roteador->get('PetTop/logout' , 'Login@logout');
 $roteador->get('' , '');
 
-//Venda
-
-
 //Usuario
 
 //DashBoard
