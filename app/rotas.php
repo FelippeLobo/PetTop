@@ -50,7 +50,16 @@ $roteador->get('PetTop/logout' , 'Login@logout');
 
 //Venda
 
-//Usuario
 
+//Usuario
+$roteador->get('PetTop/Usuarios','Usuario@listaUsuario');
+$roteador->get('PetTop/apagarUsuario','Usuario@apagarUsuario');
+$roteador->get('PetTop/editarUsuario','Usuario@editarUsuarioView');
+$roteador->post('PetTop/editarUsuario/editando','Usuario@editarUsuario');
+$roteador->get('PetTop/criarUsuario','Usuario@adicionarUsuarioView');
+$roteador->post('PetTop/criarUsuario/adicionando','Usuario@adicionarUsuario');
+$roteador->view('PetTop/Usuario','app/Views/crudUsuarios/crudUsuarios.php');
+$roteador->view('PetTop/editarUsuario','app/Views/crudUsuarios/editarPUsuario.php');
+$roteador->view('PetTop/criarUsuario','app/Views/crudUsuarios/adicionarUsuario.php');
 
 ?>
