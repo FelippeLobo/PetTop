@@ -34,7 +34,7 @@
 
             <ul class="list-unstyled components">
                 <li>
-                    <a href="/PetTop/DashBoard">
+                    <a href="/PetTop/dashBoard">
                         <i class="fas fa-home"></i>
                         <div class="icon-legend">DashBoard</div>
                     </a>
@@ -63,19 +63,19 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/PetTop/Vendas">
                         <i class="fas fa-money-check-alt"></i></i>
                         <div class="icon-legend">Vendas</div>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/PetTop/Usuarios">
                         <i class="fas fa-users"></i></i>
                         <div class="icon-legend">Usuários</div>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/PetTop/Cargos">
                     <i class="fas fa-file-invoice-dollar"></i></i>
                         <div class="icon-legend">Cargos</div>
                     </a>

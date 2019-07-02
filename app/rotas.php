@@ -69,14 +69,12 @@ $roteador->view('PetTop/criarCargo','app/Views/crudCargo/add-cargo.php');
 $roteador->get('PetTop/Login', 'Login@loginView');
 $roteador->post('PetTop/Login/login' , 'Login@login');
 $roteador->get('PetTop/logout' , 'Login@logout');
-$roteador->get('' , '');
 
-//Usuario
 
 //DashBoard
-$roteador->view('PetTop/dashBoard' , 'Login@dashBoard');
+$roteador->get('PetTop/dashBoard' , 'Login@dashBoard');
+$roteador->view('PetTop/dashBoard' , 'app/Views/dashboard/index.php');
 
-<<<<<<< HEAD
 //Usuario
 $roteador->get('PetTop/Usuarios','Usuario@listaUsuario');
 $roteador->get('PetTop/apagarUsuario','Usuario@apagarUsuario');
@@ -88,6 +86,4 @@ $roteador->view('PetTop/Usuario','app/Views/crudUsuarios/crudUsuarios.php');
 $roteador->view('PetTop/editarUsuario','app/Views/crudUsuarios/editarPUsuario.php');
 $roteador->view('PetTop/criarUsuario','app/Views/crudUsuarios/adicionarUsuario.php');
 
-=======
->>>>>>> master
 ?>

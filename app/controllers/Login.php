@@ -8,15 +8,6 @@ class Login
     public function login()
     {
 
-    
-         /*if (empty($_SESSION['nome'])) {
-
-            session_destroy();
-            header('Location: ' . $_SERVER['HTTP_REFERER']);
-             
-         }
-        */
-        
         if (isset($_POST['nome']) && isset($_POST['senha'])) {
 
             $_SESSION['logado'] = true;
@@ -24,22 +15,18 @@ class Login
             $senha = $_POST['senha'];
 
             $user = App::get('bancoDeDados')->selecionarLogin($nome, $senha);
-           
-            if (!empty($user)) { 
+
+            if (!empty($user)) {
                 $_SESSION['nome'] = $user['nome'];
-                header('Location: /PetTop/Clientes');
-            } 
-            else if(empty($_SESSION['nome'])){
+                header('Location: /PetTop/dashBoard');
+            } else if (empty($_SESSION['nome'])) {
                 header('Location: /PetTop/Login');
-            }
-            else
-            {
+            } else {
                 header('Location: ' . $_SERVER['HTTP_REFERER']);
                 session_destroy();
             }
         }
-
-        }
+    }
 
     public function loginView()
     {
@@ -60,7 +47,7 @@ class Login
 
     public function dashBoard()
     {
-        header('Location: /PetTop/Clientes');
-        //require 'app\Views\dashboard\index.php';
+        
+        require 'app/Views/layout/layout.php';
     }
 }
