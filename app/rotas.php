@@ -45,11 +45,16 @@ $roteador->view('PetTop/criarSetor' , 'app/Views/CrudSetor/Criar.view.php');
 
 //Login
 $roteador->get('PetTop/Login', 'Login@loginView');
-$roteador->post('PetTop/Login/logando' , 'Login@login');
+$roteador->post('PetTop/Login/login' , 'Login@login');
 $roteador->get('PetTop/logout' , 'Login@logout');
+$roteador->get('' , '');
 
 //Venda
 
 
 //Usuario
+
+//DashBoard
+$roteador->view('PetTop/dashBoard' , 'Login@dashBoard');
+
 ?>

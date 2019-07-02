@@ -42,6 +42,17 @@ class ConstrutorDeQuerys
         return $elementos->fetchAll(PDO::FETCH_CLASS);
     }
 
+    public function selecionarLogin($nome,$senha)
+    {
+        $statement= $this->pdo->prepare("SELECT nome,id FROM users WHERE nome = :nome AND senha = :senha");
+        $statement->bindParam(':nome', $nome);
+        $statement->bindParam(':senha', $senha);
+        $statement->execute();
+        $user=$statement->fetch(PDO::FETCH_ASSOC);
+        return $user;
+        
+    }
+
     //Apaga registro de uma tabela(String nomeDaTabela), registro especificado em parametro(id)
     public function apagar($tabela,$paramentro)
     {
