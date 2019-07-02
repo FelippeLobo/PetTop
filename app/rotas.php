@@ -10,6 +10,17 @@ $roteador->view('PetTop/Produtos','app/Views/crudProduto/crudProduto.php');
 $roteador->view('PetTop/editarProduto','app/Views/crudProduto/editarProduto.php');
 $roteador->view('PetTop/criarProduto','app/Views/crudProduto/adicionarProduto.php');
 
+//Venda
+$roteador->get('PetTop/Vendas','Venda@listaVenda');
+$roteador->get('PetTop/apagarVenda','Venda@apagarVenda');
+$roteador->get('PetTop/editarVenda','Venda@editarVendaView');
+$roteador->post('PetTop/editarVenda/editando','Venda@editarVenda');
+$roteador->get('PetTop/criarVenda','Venda@adicionarVendaView');
+$roteador->post('PetTop/criarVenda/adicionando','Venda@adicionarVenda');
+$roteador->view('PetTop/Vendas','app/Views/crudVenda/list-venda.php');
+$roteador->view('PetTop/editarVenda','app/Views/crudVenda/edit-venda.php');
+$roteador->view('PetTop/criarVenda','app/Views/crudVenda/add-venda.php');
+
 //Categoria
 $roteador->get('PetTop/Categorias','Categoria@listaCategoria');
 $roteador->get('PetTop/apagarCategoria','Categoria@apagarCategoria');
@@ -43,14 +54,29 @@ $roteador->view('PetTop/Setores' , 'app/Views/CrudSetor/crudSetor.view.php');
 $roteador->view('PetTop/editarSetor' , 'app/Views/CrudSetor/Update.view.php');
 $roteador->view('PetTop/criarSetor' , 'app/Views/CrudSetor/Criar.view.php');
 
+//Cargo
+$roteador->get('PetTop/Cargos','Cargo@listaCargo');
+$roteador->get('PetTop/apagarCargo','Cargo@apagarCargo');
+$roteador->get('PetTop/editarCargo','Cargo@editarCargoView');
+$roteador->post('PetTop/editarCargo/editando','Cargo@editarCargo');
+$roteador->get('PetTop/criarCargo','Cargo@adicionarCargoView');
+$roteador->post('PetTop/criarCargo/adicionando','Cargo@adicionarCargo');
+$roteador->view('PetTop/Cargos','app/Views/crudCargo/list-cargo.php');
+$roteador->view('PetTop/editarCargo','app/Views/crudCargo/edit-cargo.php');
+$roteador->view('PetTop/criarCargo','app/Views/crudCargo/add-cargo.php');
+
 //Login
 $roteador->get('PetTop/Login', 'Login@loginView');
-$roteador->post('PetTop/Login/logando' , 'Login@login');
+$roteador->post('PetTop/Login/login' , 'Login@login');
 $roteador->get('PetTop/logout' , 'Login@logout');
+$roteador->get('' , '');
 
-//Venda
+//Usuario
 
+//DashBoard
+$roteador->view('PetTop/dashBoard' , 'Login@dashBoard');
 
+<<<<<<< HEAD
 //Usuario
 $roteador->get('PetTop/Usuarios','Usuario@listaUsuario');
 $roteador->get('PetTop/apagarUsuario','Usuario@apagarUsuario');
@@ -62,4 +88,6 @@ $roteador->view('PetTop/Usuario','app/Views/crudUsuarios/crudUsuarios.php');
 $roteador->view('PetTop/editarUsuario','app/Views/crudUsuarios/editarPUsuario.php');
 $roteador->view('PetTop/criarUsuario','app/Views/crudUsuarios/adicionarUsuario.php');
 
+=======
+>>>>>>> master
 ?>

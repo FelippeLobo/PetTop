@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="public/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public\bootstrap-4.3.1-dist\css\bootstrap.min.css">
     <link rel="stylesheet" href="public/cssLogin/styleLogin.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
@@ -18,11 +18,6 @@
 
     <script defer src="fontawesome-free-5.8.1-web/js/solid.js"> </script>
     <script defer src="fontawesome-free-5.8.1-web/css/all.css"> </script>
-
-
-    <style>
-       
-    </style>
 
     <title>Login</title>
 </head>
@@ -35,12 +30,10 @@
             <div class="modal-content">
 
                 <div class="col-12 user-img">
-                    <img src="app/Views/Design sem nome.png" alt="">
-
-
+                    <img src="app/Views/Login/Design sem nome.png" alt="">
                 </div>
 
-                <form class="col-12" action="login" method="post">
+                <form class="col-12" action="Login/login" method="post">
                     <div class="form-group">
                         <button class="botao fas fa-user"></i></button>
                         <!-- <input type="text" name="nome" class="form-control" placeholder="Digite o nome"> -->

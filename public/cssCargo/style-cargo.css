@@ -1,0 +1,31 @@
+.cargo
+{
+    width: 10px;
+    height:30px;
+    margin-top: 15px; 
+    padding-top: 3px;
+}
+
+.cargo2
+{
+    width: 10px;
+    height:30px;
+    margin-top: 18px;   
+    padding-top:3px;
+}
+
+.page-header
+{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 10px;  
+}
+
+.header
+{
+    margin-top: 40px;
+    border-top: 1px solid gray;
+}
+
+.formulario {
+    margin-top:25px;
+}

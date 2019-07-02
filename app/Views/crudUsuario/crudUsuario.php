@@ -32,7 +32,8 @@
     <div class="container">
         <div class="row title">
             <h1 class="col">Usuários</h1>
-            <a class="btn btn-primary col-sm-3" href="usuarios/create"><i class="fas fa-plus"></i> Adicionar Novo Usuário</a>
+            <a class="btn btn-primary col-sm-3" href="cria_usuario.html"><i class="fas fa-plus"></i> Adicionar Novo
+                Usuário </a>
         </div>
         <table class="table table-striped">
             <thead>
@@ -44,27 +45,44 @@
                 </tr>
             </thead>
             <tbody>
-                <?php
-                    foreach($usuarios as $usuario) 
-                    {
-                ?>
                 <tr>
-                    <th scope="row"><?php echo $usuario->id ?></th>
-                    <td><?php echo $usuario->nome ?></td>
-                    <td><?php echo $usuario->email ?></td>
+                    <th scope="row">1</th>
+                    <td>Frank</td>
+                    <td>frank@example.com</td>
                     <td>
-                        <button type="button" class="btn btn-sm" data-toggle="modal"
-                            data-target="#<?php echo "usuarioModal{$usuario->id}" ?>">
-                            <i class="fas fa-eye"></i>
+                        <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
+                            data-target="#productModal">
+                            Visualizar
                         </button>
-                        <a class="btn btn-primary btn-sm" href="<?php echo "usuarios/edit?id=$usuario->id" ?>" role="button"><i class="fas fa-user-edit"></i></a>
 
-                        <button type="button" name="delete" class="btn btn-danger btn-sm" data-toggle="modal"
-                            data-target="#modalForExclusions<?php echo "$usuario->id"?>">
-                            <i class="fas fa-trash"></i>
-                        </button></a>
-                      
-                        <div class="modal fade" id="modalForExclusions<?php echo "$usuario->id"?>" tabindex="-1" role="dialog">
+                        <!-- Modal -->
+                        <div class="modal fade" id="productModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Usuário 1</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        ID: <br>
+                                        Nome: <br>
+                                        Email: <br>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Fechar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a class="btn btn-warning btn-sm" href="edita_usuario.html" role="button">Editar</a>
+                        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                            data-target="#modalForExclusions">
+                            Excluir
+                        </button>
+
+                        <div class="modal fade" id="modalForExclusions" tabindex="-1" role="dialog">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -74,28 +92,41 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <p>Tem certeza que deseja excluir esse usuário?</p>
+                                        <p>Esse é um processo irreversível!</p>
                                     </div>
                                     <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                    <a class="btn btn-danger" href="apagar_usuario?id=<?=$usuario->id;?>">Confirmar</a>
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Não</button>
+                                        <button type="button" class="btn btn-danger">Sim</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Janet</td>
+                    <td>janet@example.com</td>
+                    <td>
+                        <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
+                            data-target="#productModal2">
+                            Visualizar
+                        </button>
+
                         <!-- Modal -->
-                        <div class="modal fade" id="<?php echo "usuarioModal{$usuario->id}" ?>" role="dialog"
+                        <div class="modal fade" id="productModal2" tabindex="-1" role="dialog"
                             aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">Usuário 3</h5>
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Usuário 2</h5>
                                     </div>
                                     <div class="modal-body">
-                                        ID: <?= $usuario->id ?> <br>
-                                        Nome: <?= $usuario->nome ?> <br>
-                                        Email: <?= $usuario->email ?> <br>
+                                        ID: <br>
+                                        Nome: <br>
+                                        Email: <br>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
@@ -103,10 +134,93 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> 
-                <?php 
-                    }
-                ?>     
+                        </div>
+
+                        <a class="btn btn-warning btn-sm" href="edita_usuario.html" role="button">Editar</a>
+                        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                            data-target="#modalForExclusions">
+                            Excluir
+                        </button>
+
+                        <div class="modal fade" id="modalForExclusions" tabindex="-1" role="dialog">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Excluir Usuário 3?</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Esse é um processo irreversível!</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Não</button>
+                                        <button type="button" class="btn btn-danger">Sim</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Dr. Scott</td>
+                    <td>drscott@example.com</td>
+                    <td>
+                        <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
+                            data-target="#productModal3">
+                            Visualizar
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="productModal3" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Usuário 3</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        ID: <br>
+                                        Nome: <br>
+                                        Email: <br>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Fechar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a class="btn btn-warning btn-sm" href="edita_usuario.html" role="button">Editar</a>
+                        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                            data-target="#modalForExclusions">
+                            Excluir
+                        </button>
+                        <div class="modal fade" id="modalForExclusions" tabindex="-1" role="dialog">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Excluir Usuário 3?</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Esse é um processo irreversível!</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Não</button>
+                                        <button type="button" class="btn btn-danger">Sim</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </td>
                 </tr>
             </tbody>
@@ -143,7 +257,6 @@
         crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
     <script src="assets/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>
