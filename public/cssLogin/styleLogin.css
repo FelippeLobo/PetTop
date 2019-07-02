@@ -4,6 +4,10 @@ body{
     	background-image: url(fundo_laranja2.jpg)
 }
 
+.container {
+    margin: 80px auto;
+}
+
 .main-section{
     margin: 0 auto;
     margin-top: 130px;

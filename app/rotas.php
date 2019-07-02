@@ -54,4 +54,13 @@ $roteador->view('PetTop/Setores' , 'app/Views/CrudSetor/crudSetor.view.php');
 $roteador->view('PetTop/editarSetor' , 'app/Views/CrudSetor/Update.view.php');
 $roteador->view('PetTop/criarSetor' , 'app/Views/CrudSetor/Criar.view.php');
 
+//Login
+$roteador->get('PetTop/Login', 'Login@loginView');
+$roteador->post('PetTop/Login/logando' , 'Login@login');
+$roteador->get('PetTop/logout' , 'Login@logout');
+
+//Venda
+
+
+//Usuario
 ?>

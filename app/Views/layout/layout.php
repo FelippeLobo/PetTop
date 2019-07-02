@@ -41,31 +41,43 @@
                 </li>
                 <li>
                     <a href="/PetTop/Clientes">
-                        <i class="fas fa-briefcase"></i>
+                    <i class="fas fa-address-card"></i></i>
                         <div class ="icon-legend">Clientes</div>
                     </a>
                     <a href="/PetTop/Setores">
-                        <i class="fas fa-copy"></i>
+                    <i class="fas fa-door-open"></i></i>
                         <div class="icon-legend">Setores</div>
                     </a>
                     
                 </li>
                 <li>
                     <a href="/PetTop/Produtos">
-                        <i class="fas fa-image"></i>
+                    <i class="fas fa-boxes"></i></i>
                         <div class="icon-legend">Produtos</div>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="fas fa-question"></i>
-                        <div class = "icon-legend">FAQ</div>
+                    <a href="/PetTop/Categorias">
+                    <i class="fas fa-clipboard-list"></i></i>
+                        <div class = "icon-legend">Categorias</div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fas fa-paper-plane"></i>
-                        <div class="icon-legend">Contact</div>
+                        <i class="fas fa-money-check-alt"></i></i>
+                        <div class="icon-legend">Vendas</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-users"></i></i>
+                        <div class="icon-legend">Usuários</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <i class="fas fa-file-invoice-dollar"></i></i>
+                        <div class="icon-legend">Cargos</div>
                     </a>
                 </li>
             </ul>
@@ -81,7 +93,9 @@
                         <span class="navbar-text">
                           Olá, usuário
                         </span>
-                        <button type="button" class="btn btn-light">Sair <i class="fas fa-sign-out-alt"></i></button>
+                        <form action="logout">
+                        <button type="submit" class="btn btn-light">Sair <i class="fas fa-sign-out-alt"></i></button>
+                        </form> 
                 </nav>
                 <?php require Roteador::carregar('app/rotas.php')->direcionarView(Requisicao::uri()); ?>
     

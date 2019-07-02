@@ -5,15 +5,15 @@ session_start();
 
 class Login
 {
-    public function login()
+   /* public function login()
     {
 
-        session_start();
-        if (empty($_POST['nome']) || empty($_POST['senha'])) {
+        // session_start();
+        // if (empty($_POST['nome']) || empty($_POST['senha'])) {
 
-            header('Location: /viewLogin');
-            exit();
-        }
+        //     header('Location: /PetTop/Login');
+        //     exit();
+        // }
 
         if (isset($_POST['nome']) && isset($_POST['senha'])) {
             $dados = [
@@ -28,19 +28,19 @@ class Login
         if ($user != false) {
             $_SESSION['logado'] = true;
             $_SESSION['nome'] = $dados['nome'];
-            header('Location: /layout');
+            header('Location: /PetTop/Login');
             exit();
         } else {
             $_SESSION['mensagemmm'] = "Usuário ou Senha invalidos!";
 
-            header('Location: /viewLogin');
+            header('Location: /PetTop/Login');
             exit();
         }
-    }
+    }*/
 
     public function loginView()
     {
-        require 'views/viewLogin.php';
+        require 'app/Views/Login/Login.view.php';
     }
 
     public function logout()
@@ -52,6 +52,6 @@ class Login
 
         session_destroy();
 
-        header('Location: /viewLogin');
+        header('Location: /PetTop/Login');
     }
 }

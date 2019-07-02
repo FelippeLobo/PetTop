@@ -6,8 +6,22 @@ class Clientes
 {
     public function listarClientes()
     {
-        $clientes=App::get('bancoDeDados')->selecionarTudo('cliente');
+        $registroPorPg = "6";
+        if(isset($_GET['pag']))
+        {
+            $pagAtual = $_GET['pag'];
+        }
+        else
+        {
+            $pagAtual = "1";
+        }
+        $catInicial = $pagAtual - 1;
+        $catInicial = $catInicial*$registroPorPg;
+        $numClientes = App::get('bancoDeDados')->contarRegistros('cliente');
+        $totalPag = ceil($numClientes/$registroPorPg);
+        $clientes = App::get('bancoDeDados')->selecionarComLimite('cliente',[$catInicial,$registroPorPg]);
 
+    
         foreach($clientes as $cliente)
         {
             $setor["cliente {$cliente->id}"] = App::get('bancoDeDados')->selecionarOnde('setor',"id = {$cliente->id_setor}");
@@ -74,7 +88,6 @@ class Clientes
         if (isset($_POST['editandoCliente'])) {
 
             $dados =[
-            'id' => $_POST['id'],
             'id_setor' => $_POST['id_setor'],
             'nome' => $_POST['nome'],
             'sobrenome' => $_POST['sobrenome'],
