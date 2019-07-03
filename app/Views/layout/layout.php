@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="public/cssLayout/styles.css">
 
     <!-- Font Awesome JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+    <script defer src="public/fontawesome-free-5.9.0-web/js/all.js"></script>
 </head>
 
 <body>
@@ -106,9 +106,9 @@
 
     
     <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="public/jQueryPopper/jquery-3.3.1.slim.min.js"></script>
     <!-- Popper.JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="public/jQueryPopper/popper.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="public/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 

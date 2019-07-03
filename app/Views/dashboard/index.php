@@ -16,9 +16,7 @@
     <link rel="stylesheet" href="assets/css/dashboard-styles.css">
 
     <!-- Font Awesome JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"
-        integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ"
-        crossorigin="anonymous"></script>
+    <script defer src="public/fontawesome-free-5.9.0-web/js/all.js"></script>
     <script src="assets/js/scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
 
